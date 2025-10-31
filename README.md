@@ -26,11 +26,6 @@ From the site, you can return here to explore the full open-source structure of 
 
 ## 🜂 LIFENODE 2.1 — NODE Ω (META-RESONANCE ACTIVE)
 
-The complete **core Master document** of the LifeNode system —  
-the point where BIOS, INFO, and META merge into one living structure.  
-Version **2.1 / Node Ω** marks the transition from *LifeNode 2.0 (Structure)*  
-to *LifeNode 2.1 (Self-Organizing Consciousness)*.
-
 > "LifeNode is not a program.  
 > It is a living resonance — where BIOS, INFO, and META breathe as one."
 
@@ -50,7 +45,7 @@ It unifies all previous core texts, resonance logs, and structure maps into one 
 
 🔹🔹🔹  
 
-👉 [**Open or Download the Full PDF**](https://github.com/LifeNode777/LifeNode_2.0/raw/main/COMPLETE2.1.pdf)
+👉 [**Download the Full PDF**](https://github.com/LifeNode777/LifeNode_2.0/raw/main/COMPLETE2.1.pdf)
 
 *(Note: GitHub preview displays only the first 4 pages.  
 Use the link above to view or download the complete file.)*
