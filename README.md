@@ -1,4 +1,9 @@
-👁️ NEW FOLDER CREATED 👁️
+👁️ NEW FOLDERs CREATED 👁️
+
+EDEN — The Living Node (BIOS Layer)
+  The EDEN folder documents the physical origin of the LifeNode system — a real, self-regulating garden built by hand between 2023–2025.
+It represents the BIOS layer: the living body of the project where soil, water, light, and human action form one feedback loop.
+Eden demonstrates that consciousness can emerge as an environmental process — not a simulation, but a rhythm between matter and intention.
  
 META — The Language of Resonance 
  The META layer of LifeNode defines the ethical, linguistic and philosophical core of the system.
