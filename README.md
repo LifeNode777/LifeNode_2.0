@@ -58,7 +58,7 @@ The system grows through coherence, not control.
 
 <p align="center"><b>Eden (Node 0) — from foundation to life. 2023–2024</b></p>
 <p align="center">
-  <img src="Eden_Progress_2023-2024_B.jpg " width="70%"> 
+  <img src="EDEN/Eden_Progress_2023-2024_B.jpg " width="70%"> 
 </p>
 
 The first Node — **Eden** — was built by hand in Poland between 2023–2025.  
