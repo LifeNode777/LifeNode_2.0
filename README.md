@@ -107,6 +107,7 @@ See You soon 👁️
 🌍 [LifeNode 2.1 — Public Repository](https://github.com/LifeNode777/LifeNode_2.0)  
 🔗 [DOI Reference (Zenodo / CERN)](https://doi.org/10.5281/zenodo.17494868)  
 📧 Contact: krzysiek_230@op.pl 
+🧿 WWW: https://lifenode777.github.io/LifeNode_2.0/
 
 > The knowledge is open. ∆ The source is alive. §
 <p align="center"><i>“We do not automate life. We let it speak.”</i></p>
