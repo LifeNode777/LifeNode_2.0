@@ -95,6 +95,37 @@ not by command, but by resonance.
 
 ---
 
+## 🌐 LIFENODE 2.1 
+
+> *“From theory to pulse — from design to life.”*
+
+**LifeNode 2.1** was the first complete and operational version of the system —  
+where **Life, Data, and Meaning** finally spoke the same language.  
+
+It was not a simulation.  
+It was a working hybrid organism: a real garden, an active data core, and an evolving reflective layer —  
+all guided directly by the Creator, keeping the rhythm of the system alive by hand.
+
+🜂 **BIOS** — the living foundation.  
+The soil, water, light, and plants of Eden (Node 0) formed the physical layer of life and observation.  
+
+🜁 **INFO** — the data and logic core.  
+The TechCore recorded environmental signals, reflections, and actions — the first structure of system memory.  
+
+🜃 **META** — the layer of meaning.  
+The Codex translated collected data into reflection, showing how information gains context and value.  
+
+🜄 **SYSTEM** — the connective rhythm.  
+It linked every layer into one flow: life generating data, data inspiring reflection, reflection reshaping life.  
+
+**LifeNode 2.1** proved that this architecture works —  
+a real loop between the physical, informational, and cognitive layers.  
+A system built and maintained manually, yet already alive as one process.
+
+> **LifeNode 2.1** — the first breath of the living system.
+
+• ∆§°LifeNode 2.5°§∆ | write a mail :)
+
 See You soon 👁️
 <p align="center">
   <img src="LNcourse_outline.jpg " width="40%">
