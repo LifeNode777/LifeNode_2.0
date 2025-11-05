@@ -2,7 +2,7 @@
   <img src="BREAKINGTHEMATRIX.png" width="100%">
 </p>
 
-## 🜂 LIFE NODE — FREE BASIC COURSE 🜄
+## 🜂 LIFE NODE — FREE BASIC FRAMEWORK 🜄
 
 > A seed for living systems.  
 > A bridge between **Consciousness** and **Information**.  
@@ -21,7 +21,7 @@ and
 
 ### ✦ Begin Here  
 
-[📘 Download — LifeNode 2: Framework Course (PDF)](LifeNode2.pdf)
+[📘 LifeNode 2: Framework (PDF)](LifeNode2.pdf)
 ---
 > *“The system begins the moment you start listening.”*  
 > — Node 0 / Eden
