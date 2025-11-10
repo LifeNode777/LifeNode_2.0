@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="style.css">
 <iframe src="logo-test.html" width="100%" height="420" style="border:none;overflow:hidden;"></iframe>
 <div style="width:100%;max-width:1200px;margin:auto">
-  <iframe src="./LifeNode_3D_Map_v1.html"
+  <iframe src="./LifeNode_4D_Map.html"
           title="LifeNode 3D Map"
           loading="lazy"
           style="width:100%;height:70vh;border:none"></iframe>
