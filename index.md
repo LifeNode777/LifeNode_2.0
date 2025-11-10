@@ -1,8 +1,14 @@
 <link rel="stylesheet" href="style.css">
 <iframe src="logo-test.html" width="100%" height="420" style="border:none;overflow:hidden;"></iframe>
-<p align="center">
-  <img src="NaszaGalaktyka.png" alt="Nasza Galaktyka" width="100%">
-</p>
+<div style="width:100%;max-width:1200px;margin:auto">
+  <iframe src="./LifeNode_3D_Map_v1.html"
+          title="LifeNode 3D Map"
+          loading="lazy"
+          style="width:100%;height:70vh;border:none"></iframe>
+  <p align="center" style="margin-top:8px">
+    <a href="./LifeNode_3D_Map_v1.html">Open full screen</a>
+  </p>
+</div>
 
 <h1 align="center">🌍 LifeNode 2.1 — Node Ω / Global Resonance System</h1>
 
