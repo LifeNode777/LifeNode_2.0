@@ -6,7 +6,14 @@
           loading="lazy"
           style="width:100%;height:70vh;border:none"></iframe>
   <p align="center" style="margin-top:8px">
-    <a href="./LifeNode_3D_Map_v1.html">Open full screen</a>
+  <a href="https://lifenode777.github.io/LifeNode_4D_Map.html"
+     style="display:inline-block;padding:8px 14px;background:#161618;
+            color:#f5f5f7;text-decoration:none;border-radius:10px;
+            border:1px solid rgba(255,255,255,.15);font-weight:600">
+     Open full screen
+  </a>
+</p>
+    
   </p>
 </div>
 
