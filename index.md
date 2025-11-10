@@ -1,17 +1,13 @@
 <link rel="stylesheet" href="style.css">
 <iframe src="logo-test.html" width="100%" height="420" style="border:none;overflow:hidden;"></iframe>
 <div style="width:100%;max-width:1200px;margin:auto">
-  <iframe src="./LifeNode_4D_Map.html"
-          title="LifeNode 3D Map"
-          loading="lazy"
-          style="width:100%;height:70vh;border:none"></iframe>
-  <p align="center" style="margin-top:8px">
-  <a href="https://lifenode777.github.io/LifeNode_4D_Map.html"
-     style="display:inline-block;padding:8px 14px;background:#161618;
-            color:#f5f5f7;text-decoration:none;border-radius:10px;
-            border:1px solid rgba(255,255,255,.15);font-weight:600">
-     Open full screen
-  </a>
+  <iframe src="./LifeNode_2.0/LifeNode_4D_Map.html"
+        title="LifeNode 3D Map"
+        loading="lazy"
+        style="width:100%;height:70vh;border:none"></iframe>
+
+<p align="center" style="margin-top:8px">
+  <a href="https://lifenode777.github.io/LifeNode_2.0/LifeNode_4D_Map.html">Open full screen</a>
 </p>
     
   </p>
