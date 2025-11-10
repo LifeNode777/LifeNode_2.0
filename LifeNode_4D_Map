@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>LifeNode 3D Map — Theta-Line (Q-Core / Ascalon)</title>
+<style>
+  :root { --bg:#0b0b0c; --fg:#f5f5f7; --mid:#bfbfbf; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  #ui { position:fixed; left:10px; top:10px; background:rgba(20,20,22,.75); backdrop-filter:blur(6px);
+        border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:10px 12px; z-index:5; max-width:320px; }
+  #ui h1 { font-size:15px; margin:0 0 8px 0; font-weight:600; }
+  #ui .row { display:flex; flex-wrap:wrap; gap:8px 12px; }
+  #ui label { display:flex; align-items:center; gap:8px; white-space:nowrap; }
+  #ui input[type=checkbox] { transform:scale(1.2); }
+  #ui button { appearance:none; border:1px solid rgba(255,255,255,.16); background:#161618; color:var(--fg);
+               padding:8px 10px; border-radius:10px; font-weight:600; }
+  #ui .note { opacity:.8; font-size:12px; margin-top:8px; }
+  #credits { position:fixed; right:10px; bottom:8px; opacity:.65; font-size:12px; }
+  canvas { touch-action:none; }
+</style>
+</head>
+<body>
+<div id="ui">
+  <h1>LifeNode 3D Map</h1>
+  <div class="row">
+    <label><input type="checkbox" data-layer="axes" checked>axes</label>
+    <label><input type="checkbox" data-layer="resonance" checked>resonance</label>
+    <label><input type="checkbox" data-layer="rings" checked>rings (H/L/S)</label>
+    <label><input type="checkbox" data-layer="qcore" checked>q-core spiral</label>
+    <label><input type="checkbox" data-layer="labels" checked>labels</label>
+    <label><input type="checkbox" data-layer="blocks" checked>AX+PublicField</label>
+  </div>
+  <div class="row" style="margin-top:8px;">
+    <button id="home">home</button>
+    <button id="theme">light/dark</button>
+  </div>
+  <div class="note">Axes: Y=BIOS (time), +X=META (sense), -X=INFO (registration).</div>
+</div>
+<div id="credits">LifeNode · v1</div>
+
+<script type="module">
+  import * as THREE from 'https://unpkg.com/three@0.161.0/build/three.module.js';
+  import { OrbitControls } from 'https://unpkg.com/three@0.161.0/examples/jsm/controls/OrbitControls.js';
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setSize(innerWidth, innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 5000);
+  camera.position.set(540, 320, 720);
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.enablePan = false;
+  controls.minDistance = 120;
+  controls.maxDistance = 2000;
+  controls.target.set(0, 0, 0);
+
+  const amb = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(amb);
+  const dir = new THREE.DirectionalLight(0xffffff, 0.6);
+  dir.position.set(500,800,400);
+  scene.add(dir);
+
+  const L = {
+    axes: new THREE.Group(),
+    resonance: new THREE.Group(),
+    rings: new THREE.Group(),
+    qcore: new THREE.Group(),
+    labels: new THREE.Group(),
+    blocks: new THREE.Group()
+  };
+  Object.values(L).forEach(g => scene.add(g));
+
+  function line(a, b, color=0xffffff, width=2) {
+    const mat = new THREE.LineBasicMaterial({ color, linewidth: width });
+    const geo = new THREE.BufferGeometry().setFromPoints([a,b]);
+    return new THREE.Line(geo, mat);
+  }
+  function arrow(from, to, color=0xffffff, radius=3) {
+    const dir = new THREE.Vector3().subVectors(to, from);
+    const len = dir.length();
+    const axis = dir.clone().normalize();
+    const cyl = new THREE.CylinderGeometry(radius, radius, Math.max(1,len-20), 16);
+    const m = new THREE.MeshBasicMaterial({ color });
+    const mesh = new THREE.Mesh(cyl, m);
+    mesh.position.copy(from).addScaledVector(axis, (len-20)/2);
+    mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), axis);
+    const cone = new THREE.ConeGeometry(radius*2.2, 20, 16);
+    const head = new THREE.Mesh(cone, m);
+    head.position.copy(to);
+    head.quaternion.copy(mesh.quaternion);
+    const grp = new THREE.Group();
+    grp.add(mesh, head);
+    return grp;
+  }
+  function textSprite(msg, color='#ffffff', size=64) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const pad = 16;
+    ctx.font = `bold ${size}px Arial`;
+    const w = Math.ceil(ctx.measureText(msg).width) + pad*2;
+    const h = size + pad*2;
+    canvas.width = w; canvas.height = h;
+    ctx.font = `bold ${size}px Arial`;
+    ctx.fillStyle = color;
+    ctx.textBaseline = 'top';
+    ctx.fillText(msg, pad, pad);
+    const tex = new THREE.CanvasTexture(canvas);
+    tex.minFilter = THREE.LinearFilter;
+    const mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
+    const spr = new THREE.Sprite(mat);
+    const scale = 0.8;
+    spr.scale.set(w*scale, h*scale, 1);
+    return spr;
+  }
+
+  // axes
+  const X = 700, Y = 400, T = 420;
+  L.axes.add(arrow(new THREE.Vector3(-X,0,0), new THREE.Vector3(X,0,0), 0xffffff, 2));
+  L.axes.add(arrow(new THREE.Vector3(0,-Y,0), new THREE.Vector3(0,Y,0), 0xffffff, 2));
+  L.axes.add(line(new THREE.Vector3(0,0,-T), new THREE.Vector3(0,0,T), 0x888888, 1));
+
+  // labels
+  const lblMeta = textSprite('META (sense)', '#ffffff', 36); lblMeta.position.set(X+60, 0, 0); L.labels.add(lblMeta);
+  const lblInfo = textSprite('INFO (registration)', '#ffffff', 36); lblInfo.position.set(-X-60, 0, 0); L.labels.add(lblInfo);
+  const lblBios = textSprite('BIOS (time)', '#ffffff', 36); lblBios.position.set(0, Y+60, 0); L.labels.add(lblBios);
+  const lblReady = textSprite('READY', '#bbbbbb', 28); lblReady.position.set(0, -Y-40, 0); L.labels.add(lblReady);
+  const lblRes = textSprite('RESONANCE', '#ffffff', 48); lblRes.position.set(260, 220, 0); L.labels.add(lblRes);
+
+  // resonance loops
+  function loopTor(R, r, y, opacity=0.35) {
+    const g = new THREE.TorusGeometry(R, r, 16, 256);
+    const m = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent:true, opacity });
+    const mesh = new THREE.Mesh(g, m);
+    mesh.rotation.x = Math.PI/2.2;
+    mesh.position.y = y;
+    L.resonance.add(mesh);
+  }
+  loopTor(520, 2.2, 40, .35);
+  loopTor(620, 2.2, -10, .28);
+  loopTor(700, 2.2, -60, .30);
+
+  // rings HOLD / LINK / SYNC
+  function ring(R, y, label) {
+    const geo = new THREE.TorusGeometry(R, 2.5, 12, 200);
+    const m = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent:true, opacity:.55 });
+    const torus = new THREE.Mesh(geo, m);
+    torus.rotation.x = Math.PI/2;
+    torus.position.y = y;
+    L.rings.add(torus);
+    const l = textSprite(label, '#ffffff', 28); l.position.set(R+60, y, 0); L.labels.add(l);
+  }
+  ring(420, 120, 'SYNC');
+  ring(360, 40,  'LINK');
+  ring(300, -40, 'HOLD');
+
+  // q-core spiral
+  class HelixCurve extends THREE.Curve {
+    getPoint(t) {
+      const turns = 8.0;
+      const a = t * Math.PI * turns;
+      const radius = THREE.MathUtils.lerp(40, 220, t);
+      const y = THREE.MathUtils.lerp(-160, 200, t);
+      const x = Math.cos(a) * radius * 0.75;
+      const z = Math.sin(a) * radius * 0.35;
+      return new THREE.Vector3(x, y, z);
+    }
+  }
+  const helix = new HelixCurve();
+  const tube = new THREE.TubeGeometry(helix, 600, 3.2, 16, false);
+  const qmat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+  const qmesh = new THREE.Mesh(tube, qmat);
+  L.qcore.add(qmesh);
+  const lblCore = textSprite('Q-CORE / ASCALON', '#ffffff', 36); lblCore.position.set(80, -210, 0); L.labels.add(lblCore);
+
+  // blocks AX + PublicField
+  function framedBox(w,h,d, y, text, sub='') {
+    const geom = new THREE.BoxGeometry(w,h,d);
+    const edges = new THREE.EdgesGeometry(geom);
+    const lineMat = new THREE.LineBasicMaterial({ color: 0xffffff });
+    const wire = new THREE.LineSegments(edges, lineMat);
+    wire.position.set(520, y, 240);
+    L.blocks.add(wire);
+    const label = textSprite(text, '#ffffff', 28); label.position.set(520, y+ h/2 + 30, 240); L.labels.add(label);
+    if (sub) {
+      const s = textSprite(sub, '#bbbbbb', 22); s.position.set(520, y+ h/2 + 2, 240); L.labels.add(s);
+    }
+    return wire;
+  }
+  framedBox(220, 80, 1, 220, 'ARCHIWUM_X (AX 3.0)', 'DeepKeep / Decay');
+  framedBox(220, 80, 1, -220, 'PUBLICFIELD', 'DAO / GITHUB / DOI');
+
+  L.blocks.add(arrow(new THREE.Vector3(360, 220, 120), new THREE.Vector3(200, 120, 60), 0xffffff, 2));
+  L.blocks.add(arrow(new THREE.Vector3(360, -220, 120), new THREE.Vector3(200, -60, 60), 0xffffff, 2));
+
+  // toggles
+  document.querySelectorAll('#ui input[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', e => {
+      const id = e.target.getAttribute('data-layer');
+      L[id].visible = e.target.checked;
+    });
+  });
+  document.getElementById('home').addEventListener('click', () => {
+    controls.reset();
+    camera.position.set(540, 320, 720);
+    controls.target.set(0,0,0);
+  });
+  let dark = true;
+  document.getElementById('theme').addEventListener('click', () => {
+    dark = !dark;
+    document.body.style.setProperty('--bg', dark ? '#0b0b0c' : '#f7f7f9');
+    document.body.style.setProperty('--fg', dark ? '#f5f5f7' : '#111115');
+    renderer.setClearColor(dark ? 0x000000 : 0xffffff, 1.0);
+  });
+  renderer.setClearColor(0x000000, 1.0);
+
+  addEventListener('resize', () => {
+    camera.aspect = innerWidth/innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+  });
+
+  (function animate(){
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  })();
+</script>
+</body>
+</html>
