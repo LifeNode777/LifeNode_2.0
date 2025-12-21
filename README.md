@@ -1,5 +1,8 @@
 The book "LIFENODE THEORY" is complete (contact the author: krzysiek_230@op.pl)
 
+preprint on Zenodo:
+https://doi.org/10.5281/zenodo.17988037
+
 Below
 WHITE PAPER LIFENODE
 
