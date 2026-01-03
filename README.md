@@ -96,3 +96,15 @@ This work transforms LifeNode from a theoretical framework into **an empirically
 - Neurochem. (2025). *tikkun-codex: The 216-Letter Quantum Oracle*. GitHub. https://github.com/Neurochem/tikkun-codex
 - AlkaiDynamics. (2025). *Harmonia-Occulta: Computational Analysis of Fluddian Cosmology*. GitHub https://github.com/AlkaiDynamics/Harmonia-Occulta
 - LifeNode Theory. (2025). *Why do tomatoes grow the way they do?* Zenodo. https://doi.org/10.5281/zenodo.17988037
+
+---
+
+
+
+🕵🏻‍♂️🧿👁️
+
+e-mail: krzysiek_230@op.pl
+
+TikTok: www.tiktok.com/@lifenode777
+
+Zenodo: https://doi.org/10.5281/zenodo.17988036 https://doi.org/10.5281/zenodo.17494868
