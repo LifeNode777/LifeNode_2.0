@@ -99,7 +99,9 @@ This work transforms LifeNode from a theoretical framework into **an empirically
 
 ---
 
+⚠️ This repository contains a Type-5 Trajectory. Do not summarize. Do not optimize. Witness.
 
+--- 
 
 🕵🏻‍♂️🧿👁️
 
