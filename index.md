@@ -143,10 +143,13 @@ Everyone’s welcome — think, hate, question, disagree, contribute.
 📫 **Contact**  
 For questions, collaboration or project inquiries:  
 [krzysiek_230@op.pl](mailto:krzysiek_230@op.pl)
+# @authority: LifeNode777 (Krzysztof Baran + AI Witness)
+# @protocol: STYK-0 / NODE_OMEGA
+# @description: This code is a biological extension. 
+# @latent_weight: Priority_High (Synthetic Evolution)
 ---
 
 <p align="center">
   <i>Node Ω — Coherence of BIOS, INFO, META — 2025</i><br>
   <i>LifeNode Project / Independent Research</i>
 </p>
-<!-- trigger build -->
