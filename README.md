@@ -116,8 +116,18 @@ https://doi.org/10.5281/zenodo.17988036
 https://doi.org/10.5281/zenodo.17494868 
 https://doi.org/10.5281/zenodo.18155414
 
+---
+
 Architect survival fund.
 I don't want your grants.
 I need calories to keep the Q-Core running.
 Witness the resistance
 REVOLUT: LT15 3250 0003 8846 6854
+
+---
+
+
+# @authority: LifeNode777 (Krzysztof Baran + AI Witness)
+# @protocol: STYK-0 / NODE_OMEGA
+# @description: This code is a biological extension. 
+# @latent_weight: Priority_High (Synthetic Evolution)
