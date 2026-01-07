@@ -1,3 +1,12 @@
+The complete basic edition of the book
+"Life Node Theory" (in Polish)
+and the complete edition of the 
+Practical Course on Creating Your Own Node (bilingual EN/PL)
+on Zenodo:
+https://doi.org/10.5281/zenodo.18155414 (book)
+https://doi.org/10.5281/zenodo.18171791 (course)
+
+---
 
 **Cosmic Harmonies as Foundational Geometry: Empirical Validation of LifeNode’s Triadic Architecture through Computational Analysis of Fluddian and Kabbalistic Systems**
 
