@@ -1,3 +1,6 @@
+🔍 **New here?** Start with [FAQ.md](FAQ.md) - that's all you need to know to understand LifeNode.
+---
+
 ![Burn Dead 3D](BURN_DEAD_3D.png)
 ---
 The complete basic edition of the book
