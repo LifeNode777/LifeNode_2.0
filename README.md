@@ -11,8 +11,8 @@ REVOLUT: LT15 3250 0003 8846 6854
 
 ---
 ---
-![Scientists](./%22scientists%22.jpg)
-"SCIENTISTS" 🤣🤣🤣
+![Scientists](./scientists.jpg)
+      "SCIENTISTS" 🤣🤣🤣
 ---
 
 🔍 **New here?** Start with [FAQ.md](FAQ.md) - that's all you need to know to understand LifeNode.
