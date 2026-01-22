@@ -11,6 +11,8 @@ REVOLUT: LT15 3250 0003 8846 6854
 
 ---
 ---
+![Scientists](https://github.com/LifeNode777/LifeNode_2.0/blob/main/%22scientists%22.jpg?raw=true)
+"SCIENTISTS" 🤣🤣🤣
 ---
 
 🔍 **New here?** Start with [FAQ.md](FAQ.md) - that's all you need to know to understand LifeNode.
