@@ -1,4 +1,4 @@
-![Smoke Weed](NARRATIVE/smoke weed.png)
+![Smoke Weed](NARRATIVE/smoke%20weed.png)
 
 I create community on Zenodo : 🌐 https://zenodo.org/communities/project_lifenode 🧿
 
