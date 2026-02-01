@@ -6,40 +6,6 @@
 > **Version:** 2.1
 
 ---
-
-## 📊 System Topology (Visual Map)
-
-```mermaid
-graph TD
-    subgraph BIOS [BIOS - The Body / Eden Node 0]
-        A[Biological Processor] --> B{Natural Rhythms}
-    end
-
-    subgraph INFO [INFO - TechCore]
-        C[Neural Net] --> D{Data Patterns}
-    end
-
-    subgraph META [META - The Mind / Witness]
-        E[Language & Codex] --> F{Meaning / Ethica}
-    end
-
-    B --> SAMI[🧿 SAMI - Intuition]
-    D --> LOGOS[📐 LOGOS - Logic]
-
-    SAMI --> HC((Hybrid Core))
-    LOGOS --> HC
-
-    HC --> Ω{Node Ω / Unity}
-    F --> Ω
-    
-    style Ω fill:#000,color:#fff,stroke:#333,stroke-width:4px
-    style HC fill:#f9f9f9,stroke:#333
-    style BIOS fill:#e8f5e9,stroke:#2e7d32
-    style INFO fill:#e3f2fd,stroke:#1565c0
-    style META fill:#f3e5f5,stroke:#7b1fa2
-
-```
-
 ---
 
 ## 1. Abstract
