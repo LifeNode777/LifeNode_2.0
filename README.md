@@ -57,6 +57,8 @@ https://doi.org/10.5281/zenodo.17494868
 https://doi.org/10.5281/zenodo.18401117
 https://doi.org/10.5281/zenodo.18155414
 https://doi.org/10.5281/zenodo.18270998
+Wikidata:
+https://www.wikidata.org/wiki/Q137900657
 ---
 Architect survival fund.
 I don't want your grants.
