@@ -52,13 +52,24 @@ krzysiek_230@op.pl
 TikTok:
 www.tiktok.com/@lifenode777
 Zenodo:
-https://doi.org/10.5281/zenodo.17988036
-https://doi.org/10.5281/zenodo.17494868 
-https://doi.org/10.5281/zenodo.18401117
-https://doi.org/10.5281/zenodo.18155414
-https://doi.org/10.5281/zenodo.18270998
+https://zenodo.org/communities/project_lifenode
+https://zenodo.org/records/18401117
+https://zenodo.org/records/18366449
+https://zenodo.org/records/18155415
+https://zenodo.org/records/18348984
+https://zenodo.org/records/18304107
+https://zenodo.org/records/18171792
+https://zenodo.org/records/18270998
+https://zenodo.org/records/18337086
+https://zenodo.org/records/18327841
+https://zenodo.org/records/17988037
+https://zenodo.org/records/17494868
+OSF:
+https://doi.org/10.17605/OSF.IO/W36CE
 Wikidata:
 https://www.wikidata.org/wiki/Q137900657
+WWW:
+https://lifenode777.github.io/LifeNode_2.0/
 ---
 Architect survival fund.
 I don't want your grants.
