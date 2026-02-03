@@ -1,3 +1,7 @@
+3 February 2026 
+My essay on Reddit: https://www.reddit.com/user/LifeNode777/comments/1qutz23/lifenode_as_a_postindustrial_and/
+
+---
 1 February 2026 
 https://doi.org/10.17605/OSF.IO/W36CE Project LifeNode on OSF 👨🏻‍🔬
 ---
