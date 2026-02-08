@@ -73,7 +73,7 @@ https://zenodo.org/records/18337086
 
 ---
 
-3 February 2026 (8 february UPDATE: this cocksuckers ban my account xd)
+3 February 2026
 My essay on Reddit: https://www.reddit.com/user/LifeNode777/comments/1qutz23/lifenode_as_a_postindustrial_and/
 
 ---
