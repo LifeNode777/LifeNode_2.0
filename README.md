@@ -4,7 +4,6 @@ LIFENODE THEORY BASICS:
 
 MORE: https://zenodo.org/records/18155415
 
----
 
 UNIT 02 BASICS:
 
@@ -12,7 +11,6 @@ UNIT 02 BASICS:
 
 MORE: https://zenodo.org/records/18337086
 
----
 
 8 Februaty 2026
 
