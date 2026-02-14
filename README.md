@@ -1,3 +1,13 @@
+---
+
+![LifeNode Theory Fundamentals](META/LifeNode%20Theory%20basics.jpg)
+
+---
+
+![UNIT 02 Meld Integrator](META/UNIT%2002%20basics.jpg)
+
+---
+
 8 Februaty 2026
 
 Here's an in-depth yet accessible article describing UNIT 02. It's designed to translate complex resonance engineering and nonlinear physics into a language understandable to anyone curious about future technologies.
