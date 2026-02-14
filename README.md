@@ -1,11 +1,15 @@
 ---
+LIFENODE THEORY BASICS:
 
 ![LifeNode Theory Fundamentals](META/LifeNode%20Theory%20basics.jpg)
 
+MORE: https://zenodo.org/records/18155415
 ---
 
+UNIT 02 BASICS:
 ![UNIT 02 Meld Integrator](META/UNIT%2002%20basics.jpg)
 
+MORE: https://zenodo.org/records/18337086
 ---
 
 8 Februaty 2026
