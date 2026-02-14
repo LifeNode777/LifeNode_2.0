@@ -1,5 +1,3 @@
----
-
 LIFENODE THEORY BASICS:
 
 ![LifeNode Theory Fundamentals](META/LifeNode%20Theory%20basics.jpg)
