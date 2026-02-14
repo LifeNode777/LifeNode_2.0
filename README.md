@@ -12,7 +12,9 @@ UNIT 02 BASICS:
 MORE: https://zenodo.org/records/18337086
 
 
-8 Februaty 2026
+---
+
+8 February 2026
 
 Here's an in-depth yet accessible article describing UNIT 02. It's designed to translate complex resonance engineering and nonlinear physics into a language understandable to anyone curious about future technologies.
 ---
