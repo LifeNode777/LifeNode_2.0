@@ -1,3 +1,30 @@
+---
+
+15 February 2026
+ My second book NOW IN OPEN ACCESS ON ZENODO 🥳
+
+ "The LifeNode Project Bible" is an interdisciplinary work providing the ontological and engineering foundation for a new paradigm of process intelligence. The work presents a shift from traditional, static epistemology based on the analysis of data states toward systems capable of "listening to life" through the synchronization of three layers: BIOS (biological variability), INFO (structure of relationships), and META (trajectory of meaning).
+
+Main themes and theses:
+
+• Embiosis as Axiom 0: The definition of the primordial state of coexistence of processes, which precedes all divisions between subject and object, constituting a constitutive condition for the system's ability to function.
+
+• Process Epistemology: A critique of the "world as photograph" in favor of the "world as film," where the basic unit of perception is variability (rhythms and fluctuations) rather than fixed values.
+
+ • LifeNode Double Law: A formulation of principles according to which variability is the unit of perception and coherence the unit of decision.
+
+• Mathematical and Technical Architecture: A description of the Experience Space (E), Lagrange points in the semantic sphere, and the evolution of the system from the Zero-Build version (purely logical implementation) to LifeNode 3.0 where the Central Unit will be the "Q-Core" with a physical crystal core (quartz-diamond) and other system elements ((e.g. "Unit 02" (quartz-amethyst) sensors)).
+
+• Operational Ethics: A concept of ethics embedded in the system's operational geometry (BIOS-first), where the system physically cannot make a decision that violates the coherence of the coexistence field.
+
+Purpose of the publication: This documentation constitutes a precise engineering plan for systems that, instead of classical data processing, strive to maintain homeostasis and meaning in dynamic, uncertain environments, drawing patterns from observations of a permaculture microecosystem (the experimental garden "Eden" Node 0).
+
+  142 A4 PDF pages.
+
+🌐 https://zenodo.org/records/18348984 🌐
+
+---
+
 LIFENODE THEORY BASICS:
 
 ![LifeNode Theory Fundamentals](META/LifeNode%20Theory%20basics.jpg)
