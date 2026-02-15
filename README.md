@@ -1,4 +1,3 @@
----
 
 15 February 2026
  My second book NOW IN OPEN ACCESS ON ZENODO 🥳
@@ -23,7 +22,7 @@ Purpose of the publication: This documentation constitutes a precise engineering
 
 🌐 https://zenodo.org/records/18348984 🌐
 
----
+
 
 LIFENODE THEORY BASICS:
 
