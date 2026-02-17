@@ -1,3 +1,8 @@
+17 February 2026
+ create YT account 
+www.youtube.com/@LifeNode777
+
+---
 
 15 February 2026
  My second book NOW IN OPEN ACCESS ON ZENODO 🥳
