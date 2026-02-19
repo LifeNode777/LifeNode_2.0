@@ -32,7 +32,7 @@ Purpose of the publication: This documentation constitutes a precise engineering
 🌐 https://zenodo.org/records/18348984 🌐
 
 
-
+---
 LIFENODE THEORY BASICS:
 
 ![LifeNode Theory Fundamentals](META/LifeNode%20Theory%20basics.jpg)
