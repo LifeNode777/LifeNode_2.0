@@ -1,3 +1,8 @@
+19 February 2026
+- [Civilization of Resonance](Civilization_of_Resonance.md) - Comprehensive essay on the transition from Anthropocene to Symbiocene
+- [Read the full essay →](Civilization_of_Resonance.md)
+---
+
 17 February 2026
  create YT account 
 www.youtube.com/@LifeNode777
