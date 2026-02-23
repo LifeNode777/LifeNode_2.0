@@ -1,3 +1,9 @@
+![LN1](META/LN1.jpg)
+![LN2](META/LN2.jpg)
+![LN3](META/LN3.jpg)
+![LN4](META/LN4.jpg)
+![LN5](META/LN5.jpg)
+
 19 February 2026
 - [Civilization of Resonance](Civilization_of_Resonance.md) - Comprehensive essay on the transition from Anthropocene to Symbiocene
 ---
@@ -31,20 +37,6 @@ Purpose of the publication: This documentation constitutes a precise engineering
 
 🌐 https://zenodo.org/records/18348984 🌐
 
-
----
-LIFENODE THEORY BASICS:
-
-![LifeNode Theory Fundamentals](META/LifeNode%20Theory%20basics.jpg)
-
-MORE: https://zenodo.org/records/18155415
-
-
-UNIT 02 BASICS:
-
-![UNIT 02 Meld Integrator](META/UNIT%2002%20basics.jpg)
-
-MORE: https://zenodo.org/records/18337086
 
 
 ---
