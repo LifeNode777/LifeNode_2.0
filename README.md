@@ -4,6 +4,12 @@
 ![LN4](META/LN4.jpg)
 ![LN5](META/LN5.jpg)
 
+10 March 2026
+🤴🏻🧿 https://zenodo.org/records/18940776 🧿🤴🏻 NEW ZENODO 👨🏻‍🔬🕵🏻‍♂️
+This document presents the **multiperspectival ontological framework** that constitutes the **MIND layer** of the LifeNode system—the critical missing element bridging the **SOUL** (Processual Model of Intelligence) and the **BODY** (Tonic Technologies).
+
+--- 
+
 19 February 2026
 - [Civilization of Resonance](Civilization_of_Resonance.md) - Comprehensive essay on the transition from Anthropocene to Symbiocene
 ---
