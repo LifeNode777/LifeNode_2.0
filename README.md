@@ -283,6 +283,7 @@ https://doi.org/10.5281/zenodo.18171791 (course)
 🕵🏻‍♂️🧿👁️
 e-mail:
 krzysiek_230@op.pl
+https://synapsesocial.com/papers/69843360f1d9ada3c1fb077a
 TikTok:
 www.tiktok.com/@lifenode777
 Reddit:
