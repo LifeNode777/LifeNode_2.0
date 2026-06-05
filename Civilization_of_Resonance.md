@@ -1,6 +1,6 @@
 # Civilization of Resonance
 ## From Anthropocene to Symbiocene
-
+![Epistemological Shift](META/Epistemological%20Shift.png)
 *A Comprehensive Essay*
 
 **Author:** Based on the LifeNode Theoretical Framework (Krzysztof Baran, 2025–2026)
@@ -97,7 +97,9 @@ where A(t) represents SAMI perception and B(t) represents LOGOS perception. This
 A civilization in which SAMI is suppressed — in which the indigenous, embodied, rhythmically attuned perception of living systems is marginalized in favor of purely quantitative, digitized, data-driven information processing — is a civilization in which the Epistemic Tension collapses toward zero, and with it the capacity for genuine intelligence. The Anthropocene, in this reading, is not merely an ecological crisis but an epistemological impoverishment: the systematic atrophy of humanity's SAMI faculty, its capacity to feel the rhythms of the living world and be corrected by them.
 
 ### 2.3 The Cognitive Field and the Geometry of Sense
-
+<p align="center">
+      <img src="META/Semantic%20Soliton%20in%20the%20Cognitive%20Field.png" alt="Semantic Soliton in the Cognitive Field" width="100%">
+    </p>
 The LifeNode Processual Model of Intelligence introduces a rigorous mathematical formalization of these epistemological principles in the form of the **Cognitive Field**: a space not of data points but of differences, trajectories, and sense-directions.
 
 The cognitive state of the system at time t is defined by three vectors:
@@ -125,7 +127,9 @@ A decision is not a choice between options in a static landscape of utilities. I
 ---
 
 ## Part Three: Tonic Technologies and the Engineering of Resonance
-
+<p align="center">
+      <img src="META/UNIT%2002%20Meld%20Integrator.png" alt="UNIT 02 Meld Integrator" width="100%">
+    </p>
 ### 3.1 From Control to Resonance
 
 The transition from Anthropocene to Symbiocene requires not merely a change in *values* — though that is necessary — but a change in the fundamental paradigm of technology itself. The dominant technological paradigm of the Anthropocene might be called the **paradigm of control**: technology understood as a means of imposing human will upon the natural world, of substituting designed order for the spontaneous order of living systems, of optimizing outcomes according to human-defined metrics.
@@ -177,7 +181,9 @@ The seven-phase cycle of the Dynamic Sync protocol (DS 2.6) — READY, ALIGN, LO
 The ALIGN phase reduces the dimensionality of the system's trajectory by damping noise and suppressing high-frequency fluctuations that would prevent coherent phase locking. The LOCK phase injects the structural forcing (the Sx sequences) that begins to shape the potential landscape toward the desired attractor topology. The SYNC phase achieves phase locking between the technological resonators and the biological oscillators — the critical transition at which the device stops being a separate system and begins to be part of a coupled dynamical ensemble. The LINK phase opens what the documentation calls the "Einstein-Rosen column" — in dynamical systems language, this corresponds to a Hopf bifurcation through which a new, stable limit cycle is born in the coupled system: the signature rhythmic attractor of Meld itself. The HOLD phase maintains the system on this stable attractor, monitoring coherence through the ASCALON Purifier. The CLOSE phase implements a controlled return through the bifurcation landscape, preserving the geometric fingerprint of the Meld trajectory in the Q-Core.
 
 ### 3.4 ASCALON and the Geometry of Ethics
-
+<p align="center">
+      <img src="META/ASCALON%20Purifier.png" alt="ASCALON Purifier" width="100%">
+    </p>
 Perhaps the most philosophically original contribution of the LifeNode architecture is the ASCALON Purifier — a filtering mechanism that operates not through conventional digital thresholds or rule-based ethical constraints but through what the documentation describes as "ethics embedded in geometry."
 
 The ASCALON condition for signal acceptance is:
@@ -249,7 +255,9 @@ The parameter κ = -0.85 is specified in the LifeNode documentation as the optim
 ---
 
 ## Part Five: From Anthropocene to Symbiocene — The Civilizational Transformation
-
+<p align="center">
+      <img src="META/Symbiocene%20Node.png" alt="Symbiocene Node" width="100%">
+    </p>
 ### 5.1 The Symbiocene as an Ontological Shift
 
 The concept of the Symbiocene was proposed by environmental philosopher Glenn Albrecht as a successor to the Anthropocene — a future epoch defined not by human domination of the biosphere but by human integration within it. The term draws on the biological concept of symbiosis: a long-term, mutually beneficial relationship between different species that enhances the fitness and resilience of both.
