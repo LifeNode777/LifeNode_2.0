@@ -81,7 +81,9 @@ The critical insight of the LifeNode framework is that intelligence — genuinel
 A civilization that operates analogously — possessing vast information infrastructure (INFO) and sophisticated cultural narratives (META) but systematically disconnected from the actual rhythms of the living world (BIOS) — will exhibit precisely the pathologies of the Anthropocene: confident, internally coherent, collectively organized action that nonetheless systematically destroys the biological foundations on which it depends.
 
 ### 2.2 The Dual Epistemology: SAMI and LOGOS
-
+<p align="center">
+      <img src="META/SAMI-LOGOS%20Epistemic%20Tension.png" alt="SAMI-LOGOS Epistemic Tension" width="100%">
+    </p>
 Within the BIOS-INFO-META framework, the LifeNode theory distinguishes two complementary but irreducible modes of perception:
 
 **SAMI** (biological epistemology) perceives rhythm, variability, fluctuations, impulses, and life in organic time. It is the kind of perception that a farmer develops after decades of attentive relationship with a particular piece of land: an intuitive sensitivity to the rhythms of soil and season that cannot be fully articulated in propositional terms but enables genuinely accurate prediction and intervention. SAMI perceives *differences* — it is attuned to change, to transition, to the dynamics of systems rather than their steady states.
@@ -115,7 +117,9 @@ Note that sense energy is a product of *tension* and *rate of change*: meaning i
 **Consciousness**, in this framework, is defined as the rate of change of sense energy:
 
 $$C(t) = \frac{d}{dt} E_s(t)$$
-
+<p align="center">
+      <img src="META/Consciousness%20as%20a%20Dynamic%20Derivative.png" alt="Consciousness as a Dynamic Derivative" width="100%">
+    </p>
 This is one of the most profound and controversial formulations in LifeNode theory. Consciousness is not a container — not a place where experiences are stored or a substance in which thoughts occur. It is a *derivative*: a rate of change, a direction of movement, a dynamic property that exists only in transition. A system that is not changing is not conscious in any meaningful sense; consciousness is the capacity to feel *direction*, to sense the curvature of one's own trajectory through the space of sense.
 
 **Decision**, correspondingly, is defined as the stabilization of the second derivative of sense energy:
