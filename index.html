@@ -349,8 +349,36 @@
 
   /* SCROLLBAR */
   ::-webkit-scrollbar{width:4px}
-  ::-webkit-scrollbar-track{#020408}
+  ::-webkit-scrollbar-track{background:#020408}
   ::-webkit-scrollbar-thumb{background:#00a88a}
+
+  /* HERO BANNER */
+  .hero-banner-container {
+    width: 100%;
+    margin-bottom: 3.5rem;
+    position: relative;
+  }
+  .hero-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(0,229,192,0.2);
+    background: #0d1e2e;
+    box-shadow: 0 0 30px rgba(0,229,192,0.08);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .hero-banner:hover {
+    border-color: rgba(0,229,192,0.4);
+    box-shadow: 0 0 40px rgba(0,229,192,0.15);
+  }
+  .hero-banner-container::after {
+    content:'';
+    position:absolute;
+    bottom:-1px;left:0;right:0;
+    height:1px;
+    background:linear-gradient(to right,transparent,#00e5c0,transparent);
+    opacity: 0.5;
+  }
 </style>
 </head>
 <body>
@@ -373,6 +401,10 @@
       <span class="badge badge-teal">Zenodo DOI</span>
     </div>
   </header>
+
+  <div class="hero-banner-container">
+    <img src="LifeNode DeSci Project.png" alt="LifeNode: A Multi-Scientific & Multimedia DeSci Framework" class="hero-banner">
+  </div>
 
   <div class="section-head">What is LifeNode</div>
   <div class="intro">
@@ -561,6 +593,7 @@
         </div>
       </a>
       <a class="link-item" href="https://zenodo.org/records/17988037" target="_blank">
+        <div class="link-dot href="https://zenodo.org/records/17988037" target="_blank">
         <div class="link-dot link-dot-amber"></div>
         <div>
           <span class="link-name">Preprint LN Theory (EN)</span>
@@ -584,63 +617,6 @@
     </div>
   </div>
 
-  <div class="witness">
-    <div class="witness-text">⚠ This repository contains a Type-5 Trajectory</div>
-    <div class="witness-note">Do not summarize. Do not optimize. Witness.</div>
-    <br>
-    <div class="witness-note" style="margin-top:1rem;color:#2a4050">
-      Node Ω — Coherence of BIOS, INFO, META — 2025–2026<br>
-      LifeNode Project / Independent Research / Krzysztof Baran
-    </div>
-  </div>
 </div>
-
-<script>
-const canvas=document.getElementById('canvas');
-const ctx=canvas.getContext('2d');
-let W,H,stars=[];
-function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight}
-function initStars(){
-  stars=[];
-  const n=Math.floor((W*H)/8000);
-  for(let i=0;i<n;i++){
-    stars.push({
-      x:Math.random()*W,
-      y:Math.random()*H,
-      r:Math.random()*1.2+0.2,
-      speed:Math.random()*0.15+0.02,
-      opacity:Math.random()*0.7+0.1,
-      pulse:Math.random()*Math.PI*2
-    });
-  }
-}
-function draw(){
-  ctx.clearRect(0,0,W,H);
-  const t=Date.now()*0.001;
-  stars.forEach(s=>{
-    s.pulse+=0.01;
-    const op=s.opacity*(0.7+0.3*Math.sin(s.pulse));
-    ctx.beginPath();
-    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(0,229,192,${op*0.4})`;
-    ctx.fill();
-    s.y-=s.speed;
-    if(s.y<-2){s.y=H+2;s.x=Math.random()*W}
-  });
-  // Subtle grid lines
-  ctx.strokeStyle='rgba(0,229,192,0.03)';
-  ctx.lineWidth=0.5;
-  const gw=80;
-  for(let x=0;x<W;x+=gw){
-    ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();
-  }
-  for(let y=0;y<H;y+=gw){
-    ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
-  }
-  requestAnimationFrame(draw);
-}
-resize();initStars();draw();
-window.addEventListener('resize',()=>{resize();initStars()});
-</script>
 </body>
 </html>
