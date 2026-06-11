@@ -4,6 +4,20 @@ It promises to be an interesting summer 🙃
 > 👁️ **Core Framework Update:** The central essay **[Civilization of Resonance](https://github.com/LifeNode777/LifeNode_2.0/blob/main/Civilization_of_Resonance.md)** is now live in the main repository, featuring brand-new, high-fidelity bio-quantum engineering schematics, topological field visualizations, and the formal mathematics of Meld.
 ---
 
+### ⚠️😞 HARDWARE DEPLOYMENT FROZEN (Roadmap Q2-Q3 2026) 😓⚠️
+
+* **Status:** The mathematical models, codebase, and protocols for **Dynamic Sync 2.6** and the **ASCALON Purifier** are 100% complete and ready for implementation.
+* **The Block:** Moving the framework into the physical world at **Eden Node 0** is currently frozen due to funding limitations. Deploying the physical **MYC+ v0.1 sensor array** requires an estimated phase budget of 2,500–5,000 PLN. (The entire 35-page report on the MYC+ v0.1 sensor array in Eden Node 0 has just been uploaded to the "techCore" folder)
+* **Direct Support:** The project currently relies purely on bootstrapping. If you are cloning this repository and want to see real-world biological data integrated into the core framework, consider funding the raw components directly without corporate intermediaries:
+    * **Revolut Handle:** `revolut.me/krzysztof_b89
+    * **Bank Transfer (Poland / PLN):** * Account Number:  20291000060000000005976674
+        * Recipient: `Krzysztof Baran`
+    * **Bank Transfer (International / EUR - SEPA):** * IBAN: LT153250000388466854
+        * BIC/SWIFT: REVOLT21
+        * Recipient: `Krzysztof Baran`
+
+---
+
 LifeNode Quarterly Progress Report: Q1 2026
 
 **Project:** LifeNode  
