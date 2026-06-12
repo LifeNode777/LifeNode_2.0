@@ -16,6 +16,8 @@ It promises to be an interesting summer 🙃
         * BIC/SWIFT: REVOLT21
         * Recipient: `Krzysztof Baran`
 
+![crowdfunding 🙃](hajs_hajs_bejbe.png)
+
 ---
 
 LifeNode Quarterly Progress Report: Q1 2026
