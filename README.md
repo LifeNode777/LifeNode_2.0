@@ -1,3 +1,14 @@
+![NOC KUPAŁY](NARRATIVE/Kupała_Night.png)
+
+💫🎉💖
+Awesome Kupała Night to everyone
+🧿🛸☄️
+
+![First sketches](TechCore/first_primitive_sketches.jpg)
+
+---
+---
+
 🕵🏻‍♂️ UPDATE ZENODO 🕵🏻‍♂️
 🧿 UNIT 02 – Bio-Hybrid Resonance Engine & Meld Integrator 👁️
 
