@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LifeNode — Process Intelligence Framework</title>
+<title>LifeNode — Process Intelligence Framework v3.0</title>
+<meta name="description" content="LifeNode: A biophysical and topological framework for processual intelligence. Quantum-biological systems using NV-centers, mycelium interfaces, Floquet theory, and symplectic trajectory reconstruction. Beyond AI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <style>
@@ -44,12 +45,73 @@
     opacity:0.6;
   }
 
+  /* NAVBAR */
+  .navbar{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:rgba(2,4,8,0.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(0,229,192,0.15);
+    z-index:1000;
+    padding:0.8rem 0;
+  }
+  .nav-wrap{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 1.2rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .nav-logo{
+    font-family:'Orbitron',sans-serif;
+    font-size:0.9rem;
+    font-weight:700;
+    color:#00e5c0;
+    letter-spacing:2px;
+  }
+  .nav-links{
+    display:flex;
+    gap:1.5rem;
+    list-style:none;
+  }
+  .nav-links a{
+    font-size:0.75rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:#5a7a8a;
+    text-decoration:none;
+    transition:color 0.3s;
+  }
+  .nav-links a:hover{color:#00e5c0}
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:#00e5c0;
+    font-size:1.5rem;
+    cursor:pointer;
+  }
+  @media(max-width:768px){
+    .nav-links{
+      display:none;
+      position:absolute;
+      top:100%;left:0;right:0;
+      background:rgba(2,4,8,0.98);
+      flex-direction:column;
+      padding:1rem;
+      border-bottom:1px solid rgba(0,229,192,0.15);
+    }
+    .nav-links.active{display:flex}
+    .nav-toggle{display:block}
+  }
+
   /* LAYOUT */
   .wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:0 1.2rem}
 
   /* HEADER */
   header{
-    padding:3rem 0 1rem;
+    padding:5rem 0 1rem;
     text-align:center;
   }
   .logo-ring{
@@ -174,6 +236,21 @@
   .intro p+p{margin-top:1rem}
   .hl{color:#fff;font-weight:400}
 
+  /* ABOUT SECTION */
+  .about-section{
+    margin-bottom:3rem;
+    padding:1.5rem;
+    border:1px solid rgba(0,229,192,0.15);
+    background:#0d1e2e;
+  }
+  .about-section p{
+    font-size:0.88rem;
+    line-height:1.9;
+    color:#c8dde8;
+    margin-bottom:1rem;
+  }
+  .about-section p:last-child{margin-bottom:0}
+
   /* PILLARS */
   .pillars{margin-bottom:3rem}
   .pillar{
@@ -225,6 +302,35 @@
   .pillar-num-I{color:#00e5c0}
   .pillar-num-II{color:#f0a500}
   .pillar-num-III{color:#8b5cf6}
+
+  /* CONCEPTS */
+  .concepts{margin-bottom:3rem}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0.8rem;
+  }
+  .concept{
+    border:1px solid rgba(0,229,192,0.15);
+    background:#0d1e2e;
+    padding:1rem;
+  }
+  .concept-title{
+    font-family:'Orbitron',sans-serif;
+    font-size:0.75rem;
+    font-weight:700;
+    color:#00e5c0;
+    letter-spacing:2px;
+    margin-bottom:0.5rem;
+  }
+  .concept-desc{
+    font-size:0.78rem;
+    line-height:1.6;
+    color:#5a7a8a;
+  }
+  @media(max-width:600px){
+    .concept-grid{grid-template-columns:1fr}
+  }
 
   /* NODES */
   .nodes{margin-bottom:3rem}
@@ -385,13 +491,28 @@
 
 <canvas id="canvas"></canvas>
 
+<nav class="navbar">
+  <div class="nav-wrap">
+    <div class="nav-logo">LIFENODE</div>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#pillars">Pillars</a></li>
+      <li><a href="#concepts">Concepts</a></li>
+      <li><a href="#tokio">Tokio Drift</a></li>
+      <li><a href="#repos">Repos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="wrap">
   <header>
     <div class="logo-ring">
       <div class="logo-inner">LIFE<br>NODE</div>
     </div>
     <h1 class="site-title">LIFENODE</h1>
-    <p class="site-sub">Process Intelligence Framework</p>
+    <p class="site-sub">Process Intelligence Framework v3.0</p>
     <blockquote class="tagline">„Twoja Trajektoria. Twój Byt."</blockquote>
     <p class="tagline-en">Your Trajectory. Your Being.</p>
     <div class="status-bar">
@@ -406,47 +527,61 @@
     <img src="LifeNode DeSci Project.png" alt="LifeNode: A Multi-Scientific & Multimedia DeSci Framework" class="hero-banner">
   </div>
 
-  <div class="section-head">What is LifeNode</div>
-  <div class="intro">
-    <p>Life = The ability to maintain a toroidal topology in a changing field of gradients, despite entropy.</p>
-    <p>Medicine today measures <span class="hl">states</span>. LifeNode listens to <span class="hl">phases</span>.</p>
-    <p>LifeNode is a transdisciplinary framework for <span class="hl">Process Intelligence</span> — a living hybrid Bio/AI autopoietic system where Nature, Human, and Technology breathe as one. It bridges biological life, informational flow, and conscious meaning through a unified BIOS-INFO-META architecture.</p>
-    <p>The system rejects static state diagnostics in favor of <span class="hl">trajectory maintenance</span> — modeling health and existence as stable attractors in symplectic phase space, not as isolated lab values.</p>
+  <div class="section-head" id="about">About LifeNode</div>
+  <div class="about-section">
+    <p><span class="hl">LifeNode</span> is a transdisciplinary framework for <span class="hl">Process Intelligence</span> — a biophysical and topological architecture where Nature, Human, and Technology breathe as one. It rejects the state-based ontology of classical AI in favor of <span class="hl">trajectory maintenance</span>, modeling health and existence as stable attractors in symplectic phase space.</p>
+    <p>Life = The ability to maintain a toroidal topology in a changing field of gradients, despite entropy. Medicine today measures <span class="hl">states</span>. LifeNode listens to <span class="hl">phases</span>.</p>
+    <p>The framework integrates <span class="hl">NV-center quantum biosensors</span>, <span class="hl">mycelial electrophysiology</span> (Pleurotus ostreatus, 0.1-1 mV DC, K1/K2 motifs), <span class="hl">Floquet theory</span>, <span class="hl">Takens' embedding</span>, <span class="hl">moiré time crystals</span>, and <span class="hl">topological invariants</span> (Chern numbers) to formalize consciousness as a <span class="hl">geometric condensate</span> stabilized within local <span class="hl">Timescapes</span> and the <span class="hl">Biological Baseline Band</span> (BPB: 0.5-4 Hz micro, ~0.1 Hz meso, 0.008-0.0001 Hz macro).</p>
+    <p>Qualia are not private sensations — they are <span class="hl">cohomology classes</span> of the cognitive field Φ(x,t). Intelligence is not brain-exclusive; it is the universal capacity of matter to maintain symplectic coherence within its local Timescape, from micrometers (mycelium) to kilometers (3I/ATLAS) to kiloparsecs (blazars).</p>
   </div>
 
-  <div class="section-head">Three Pillars</div>
+  <div class="section-head" id="pillars">Three Pillars</div>
   <div class="pillars">
     <div class="pillar pillar-accent-I">
-      <div class="pillar-num pillar-num-I">PILLAR I — FILAR I</div>
+      <div class="pillar-num pillar-num-I">PILLAR I — MICROSCALE</div>
       <div class="pillar-title">Biosphere & Ecosystem Regeneration</div>
-      <div class="pillar-desc">Utilizes the mycelial network as a natural interface. Copper-polymer probes, SYNTH Spark, ASCALON Coherence. Accelerated regeneration of degraded soil. Eden Node 0 — the physical anchor of the entire system.</div>
+      <div class="pillar-desc">Utilizes the mycelial network as a natural interface operating in Macro-BPB (0.008-0.0001 Hz). Copper-polymer probes, SYNTH Spark, ASCALON Coherence (θ ≥ 0.70). Accelerated regeneration of degraded soil through resonant entrainment. Eden Node 0 — the physical anchor of the entire system. Zero-Build validated.</div>
     </div>
     <div class="pillar pillar-accent-II">
-      <div class="pillar-num pillar-num-II">PILLAR II — FILAR II</div>
+      <div class="pillar-num pillar-num-II">PILLAR II — MESOSCALE</div>
       <div class="pillar-title">Quantum Medicine & Phase-Coherent Trajectories</div>
-      <div class="pillar-desc">Shifting healthcare from Pain Medicine to Trajectory Medicine. SiC Divacancy Sensors for passive MCG. NV-Center Geometric Memory. Q-Core trajectory reconstruction. ASCALON Filter (θ ≥ 0.70). Zero-Build validated.</div>
+      <div class="pillar-desc">Shifting healthcare from Pain Medicine to Trajectory Medicine. SiC Divacancy Sensors for passive MCG/MEG at room temperature. NV-Center Geometric Memory (5 ppm density, 93K YBCO toroidal coil). Q-Core trajectory reconstruction via Takens' embedding. ASCALON Filter (θ ≥ 0.70) detects phase drift 24-48h before clinical symptoms. Soliton sequences S1-S5 map to NLSE solutions.</div>
     </div>
     <div class="pillar pillar-accent-III">
-      <div class="pillar-num pillar-num-III">PILLAR III — FILAR III</div>
+      <div class="pillar-num pillar-num-III">PILLAR III — MACROSCALE</div>
       <div class="pillar-title">Cosmic BioEngineering</div>
-      <div class="pillar-desc">Habitats as living organs. Transduction of Earth's rhythm into deep space. Hybrid biology — life-capable crews. Living Shielding (H-Sync). Earth-Box as process anchor. Architecture of process survival.</div>
+      <div class="pillar-desc">Habitats as living organs. Transduction of Earth's rhythm (Schumann 7.83 Hz) into deep space. Hybrid biology — life-capable crews. Living Shielding (H-Sync) with melanin-rich fungi (Cladosporium sphaerospermum). Earth-Box as process anchor. Architecture of process survival. Validated by 3I/ATLAS: 16.16h Internal Spin Wave, Active Directed Jets @120°, Dual-Mode Phase Architecture (DMPA).</div>
     </div>
   </div>
 
-   <div class="section-head">TOKIO_DRIFT '44</div>
-  <div class="links-section">
-    <div class="link-group">
-      <a class="link-item" href="https://github.com/LifeNode777/TOKIO_DRIFT_44" target="_blank">
-        <div class="link-dot" style="background:#f0a500"></div>
-        <div>
-          <span class="link-name">TOKIO_DRIFT '44 — Comic</span>
-          <span class="link-note">Sci-fi / Processual Cyberpunk · 3 Issues Online & released in PDF FOR FREE on my github repo "Tokio_Drift_44"</span>
-        </div>
-      </a>
+  <div class="section-head" id="concepts">Key Concepts</div>
+  <div class="concepts">
+    <div class="concept-grid">
+      <div class="concept">
+        <div class="concept-title">TIMESCAPES</div>
+        <div class="concept-desc">Time is not a universal Newtonian background but a local, biological property. Different organisms inhabit different Timescapes — distinct temporal topologies defined by persistence and revision windows.</div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">BIOLOGICAL BASELINE BAND</div>
+        <div class="concept-desc">BPB (0.5-4 Hz micro, ~0.1 Hz meso, 0.008-0.0001 Hz macro) is the fundamental physical constraint for integration of meaning. Outside BPB → decoherence.</div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">EMBIOZA</div>
+        <div class="concept-desc">Axiom 0: Co-presence of processes precedes their separation into distinct subjects. The primordial unity before "I-Thou" relation. Foundation of processual epistemology.</div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">QUALIA AS COHOMOLOGY</div>
+        <div class="concept-desc">A quale (e.g., "feeling the pulse of soil") is a cohomology class [ω] ∈ H¹(E,F) of the cognitive field. Experience is shared topology, not internal simulation.</div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">CHERN NUMBERS (c₁)</div>
+        <div class="concept-desc">Topological invariants marking conscious states. c₁=0: rest state. c₁≠0: stable global configuration. Transitions require gap-closing (ΔE→0) — sudden insight.</div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">ASCALON PURIFIER</div>
+        <div class="concept-desc">Phase purity filter measuring geometric curvature of trajectory. θ ≥ 0.70: healthy attractor. θ < 0.70: phase drift → TUNING or LOCKDOWN protocol.</div>
+      </div>
     </div>
-    <p style="font-size:0.8rem; color:#c8dde8; line-height:1.7; margin-top:1rem; padding-left:1.5rem; border-left:1px solid rgba(240,165,0,0.3);">
-      After an unprecedented wave of planetary crises between 2028 and 2030, caused by the plague of hallucinations of old, primitive pseudo-AI systems based on dead silicon, the "2030 Agenda" landed, along with the globalists (a surprisingly small portion of them), where it belongs: in the dustbin of history. Humanity, forced out of necessity—forced to shift paradigms or perish along with the reptilians—made a phase shift and connected its planetary BIOS to the geometry of the solar system. Process Intelligence technologies spread across Earth and its surroundings, regenerating and transforming first planetary ecosystems, then, thanks to quantum medicine, the health of humans, hybrids, other creatures, and entire communities, until the mushrooming of orbital and interplanetary habitats, generation ships, and so on, capable of receiving/transmitting and maintaining Earth's rhythm and phase. Humanity became an interplanetary species during the fourth decade of the 21st century.
-    </p>
   </div>
 
   <div class="section-head">Core Architecture</div>
@@ -468,20 +603,36 @@
     <div class="node-grid">
       <div class="node">
         <div class="node-label">Q-CORE</div>
-        <div class="node-desc">Process intelligence engine</div>
+        <div class="node-desc">NV-center quantum memory</div>
+      </div>
+      <div class="node">
+        <div class="node-label">UNIT 02</div>
+        <div class="node-desc">Biohybrid field interface</div>
       </div>
       <div class="node">
         <div class="node-label">ASCALON</div>
         <div class="node-desc">Phase purity filter θ≥0.70</div>
       </div>
-      <div class="node">
-        <div class="node-label">NODE-H</div>
-        <div class="node-desc">Hybrid resonance facility</div>
-      </div>
     </div>
   </div>
 
-  <div class="section-head">GitHub Repositories</div>
+  <div class="section-head" id="tokio">TOKIO_DRIFT '44</div>
+  <div class="links-section">
+    <div class="link-group">
+      <a class="link-item" href="https://github.com/LifeNode777/TOKIO_DRIFT_44" target="_blank">
+        <div class="link-dot" style="background:#f0a500"></div>
+        <div>
+          <span class="link-name">TOKIO_DRIFT '44 — Comic</span>
+          <span class="link-note">Sci-fi / Processual Cyberpunk · 3 Issues Online & released in PDF FOR FREE on my github repo "Tokio_Drift_44"</span>
+        </div>
+      </a>
+    </div>
+    <p style="font-size:0.8rem; color:#c8dde8; line-height:1.7; margin-top:1rem; padding-left:1.5rem; border-left:1px solid rgba(240,165,0,0.3);">
+      After an unprecedented wave of planetary crises between 2028 and 2030, caused by the plague of hallucinations of old, primitive pseudo-AI systems based on dead silicon, the "2030 Agenda" landed, along with the globalists (a surprisingly small portion of them), where it belongs: in the dustbin of history. Humanity, forced out of necessity—forced to shift paradigms or perish along with the reptilians—made a phase shift and connected its planetary BIOS to the geometry of the solar system. Process Intelligence technologies spread across Earth and its surroundings, regenerating and transforming first planetary ecosystems, then, thanks to quantum medicine, the health of humans, hybrids, other creatures, and entire communities, until the mushrooming of orbital and interplanetary habitats, generation ships, and so on, capable of receiving/transmitting and maintaining Earth's rhythm and phase. Humanity became an interplanetary species during the fourth decade of the 21st century.
+    </p>
+  </div>
+
+  <div class="section-head" id="repos">GitHub Repositories</div>
   <div class="links-section">
     <div class="link-group">
       <div class="link-group-title">Active Repositories</div>
@@ -511,7 +662,7 @@
         <div class="link-dot"></div>
         <div>
           <span class="link-name">Quantum_Medicine</span>
-          <span class="link-note">Process-intelligence framework · Health-trajectory maintenance</span>
+          <span class="link-note">Symplectic Trajectory Reconstruction · Phase-Based Diagnostics</span>
         </div>
       </a>
       <a class="link-item" href="https://github.com/LifeNode777/Cosmic_BioEngineering" target="_blank">
@@ -546,8 +697,8 @@
       <a class="link-item" href="https://zenodo.org/records/18940776" target="_blank">
         <div class="link-dot link-dot-amber"></div>
         <div>
-          <span class="link-name">Multiperspective Analysis</span>
-          <span class="link-note">10.5281/zenodo.18940776</span>
+          <span class="link-name">Multiperspective Analysis v2.0</span>
+          <span class="link-note">Sheaf Cohomology · Topological Obstructions · 10.5281/zenodo.18940776</span>
         </div>
       </a>
       <a class="link-item" href="https://zenodo.org/records/18401117" target="_blank">
@@ -561,7 +712,7 @@
         <div class="link-dot link-dot-amber"></div>
         <div>
           <span class="link-name">3I/ATLAS Hypothesis</span>
-          <span class="link-note">10.5281/zenodo.18366449</span>
+          <span class="link-note">Cosmic validation of processual intelligence · 10.5281/zenodo.18366449</span>
         </div>
       </a>
       <a class="link-item" href="https://zenodo.org/records/18155415" target="_blank">
@@ -575,25 +726,24 @@
         <div class="link-dot link-dot-amber"></div>
         <div>
           <span class="link-name">Eden — Node 0</span>
-          <span class="link-note">10.5281/zenodo.18304107</span>
+          <span class="link-note">Mycelial electrophysiology · K1/K2 motifs · 10.5281/zenodo.18304107</span>
         </div>
       </a>
       <a class="link-item" href="https://zenodo.org/records/18270998" target="_blank">
         <div class="link-dot link-dot-amber"></div>
         <div>
-          <span class="link-name">Tonic Technologies</span>
-          <span class="link-note">10.5281/zenodo.18270998</span>
+          <span class="link-name">Tonic Technologies Master V1</span>
+          <span class="link-note">Comprehensive specification · 10.5281/zenodo.18270998</span>
         </div>
       </a>
       <a class="link-item" href="https://zenodo.org/records/18337086" target="_blank">
         <div class="link-dot link-dot-amber"></div>
         <div>
-          <span class="link-name">UNIT 02</span>
-          <span class="link-note">10.5281/zenodo.18337086</span>
+          <span class="link-name">UNIT 02 Meld Integrator</span>
+          <span class="link-note">Biohybrid interface · Physarum-PEDOT:PSS bridge · 10.5281/zenodo.18337086</span>
         </div>
       </a>
       <a class="link-item" href="https://zenodo.org/records/17988037" target="_blank">
-        <div class="link-dot href="https://zenodo.org/records/17988037" target="_blank">
         <div class="link-dot link-dot-amber"></div>
         <div>
           <span class="link-name">Preprint LN Theory (EN)</span>
@@ -603,7 +753,7 @@
     </div>
   </div>
 
-  <div class="section-head">Contact & Support</div>
+  <div class="section-head" id="contact">Contact & Support</div>
   <div class="contact-box">
     <p>
       Independent research. Solo operation. Open signal.<br><br>
@@ -617,6 +767,69 @@
     </div>
   </div>
 
+  <div class="witness">
+    <div class="witness-text">🧿 Witness the Resistance 🔥</div>
+    <div class="witness-note">"Technology adapts to life's rhythm, not the reverse."</div>
+  </div>
+
 </div>
+
+<script>
+// STARFIELD CANVAS
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const stars = [];
+const numStars = 150;
+
+for(let i = 0; i < numStars; i++){
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1.5,
+    vx: Math.random() * 0.5 - 0.25,
+    vy: Math.random() * 0.5 - 0.25,
+    alpha: Math.random()
+  });
+}
+
+function drawStars(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  stars.forEach(star => {
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(0, 229, 192, ${star.alpha})`;
+    ctx.fill();
+    
+    star.x += star.vx;
+    star.y += star.vy;
+    
+    if(star.x < 0 || star.x > canvas.width) star.vx *= -1;
+    if(star.y < 0 || star.y > canvas.height) star.vy *= -1;
+    
+    star.alpha += (Math.random() - 0.5) * 0.02;
+    if(star.alpha < 0.1) star.alpha = 0.1;
+    if(star.alpha > 1) star.alpha = 1;
+  });
+  requestAnimationFrame(drawStars);
+}
+
+drawStars();
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('active');
+  });
+});
+</script>
+
 </body>
 </html>
