@@ -1,3 +1,10 @@
+29 czerwiec 2026
+![My June github sprint finished](NARRATIVE/Summary_June_2026.png)
+This graphic by Gemini 3.5 Flash interestingly summarizes 😆 the month of June that is just ending with the biggest heat wave in Poland (record from 1921 broken)
+🌡️🌡️🌡️
+
+---
+
 🔥🔥🔥
 22 Czerwiec 2026
 🏆🏆🏆
