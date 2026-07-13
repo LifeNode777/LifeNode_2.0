@@ -1,0 +1,164 @@
+cff-version: 1.2.0
+message: "Jeśli używasz projektu LifeNode w swoich badaniach lub pracach, zacytuj go, używając poniższych metadanych."
+title: "LifeNode Project: Framework for Processual Intelligence and Bio-Geometric Systems"
+version: "4.0.0"
+date-released: "2026-07-13"
+url: "https://lifenode777.github.io/LifeNode_2.0/"
+repository-code: "https://github.com/LifeNode777"
+authors:
+  - family-names: "Baran"
+    given-names: "Krzysztof"
+  - name: "LifeNode Research Collective"
+    affiliation: "Węzeł Zero / LifeNode Project"
+abstract: "Kompleksowy framework ontologii procesowej i systemów bio-geometrycznych. Obejmuje architekturę BIOS-INFO-META, specyfikacje hardware (Q-Core, UNIT 02), matematykę rezonansu (NLSE, Twierdzenie Takensa, metryka ASCALON) oraz walidację empiryczną i kosmiczną."
+license: "CC-BY-NC-SA-4.0"
+keywords:
+  - "Processual Intelligence"
+  - "Biophysical Topology"
+  - "Tonic Technologies"
+  - "Biological Baseline Band (BPB)"
+  - "ASCALON Purifier"
+references:
+  - type: preprint
+    title: "LifeNode Theory v4.0: The Geometry of Biological Processes"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-07-06"
+    doi: "doi.org/10.5281/zenodo.2121990"
+    url: "https://doi.org/10.5281/zenodo.21219901"
+
+  - type: patent
+    title: "Hydrogel Phase Membrane (HMF)"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-06-28"
+    doi: "doi.org/10.5281/zenodo.21001729"
+    url: "https://doi.org/10.5281/zenodo.21001729"
+
+  - type: patent
+    title: "Tonic Technologies: Science, Engineering, and Applications in Living Systems with Special Focus on Project LifeNode"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-06-26"
+    doi: "doi.org/10.5281/zenodo.20909213"
+    url: "https://doi.org/10.5281/zenodo.20909213"
+
+  - type: preprint
+    title: "Multiperspectivity V2.0: Topological Obstructions, Sheaf Cohomology, and the Geometry of Interference in Processual Fields"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-06-25"
+    doi: "doi.org/10.5281/zenodo.20851251"
+    url: "https://doi.org/10.5281/zenodo.20851251"
+
+  - type: patent
+    title: "UNIT 02 - Bio-Hybrid Resonance Engine & Meld Integrator"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-06-17"
+    doi: "doi.org/10.5281/zenodo.20730315"
+    url: "https://doi.org/10.5281/zenodo.20730315"
+
+  - type: publication
+    title: "Tokio_Drift_'44 (Vol. 1) – Memetic Payload and Cognitive Phase-Drift Simulation (LifeNode Architecture)"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-06-16"
+    doi: "doi.org/10.5281/zenodo.20716388"
+    url: "https://doi.org/10.5281/zenodo.20716388"
+
+  - type: preprint
+    title: "On Consciousness as a Geometric Condensate in Processual Fields"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-06-10"
+    doi: "doi.org/10.5281/zenodo.20621097"
+    url: "https://doi.org/10.5281/zenodo.20621097"
+
+  - type: preprint
+    title: "Symplectic Trajectory Reconstruction: The Mathematics of BIOS-Coherence and Phase-Based Diagnostics"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-04-27"
+    doi: "doi.org/10.5281/zenodo.19811561"
+    url: "https://doi.org/10.5281/zenodo.19811561"
+
+  - type: dataset
+    title: "Stabilization of the Bio-Digital Transduction Process"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-01-28"
+    doi: "doi.org/10.5281/zenodo.18401117"
+    url: "https://doi.org/10.5281/zenodo.18401117"
+
+  - type: thesis
+    title: "3I/ATLAS - HYPOTHESIS"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-01-25"
+    doi: "doi.org/10.5281/zenodo.18366449"
+    url: "https://doi.org/10.5281/zenodo.18366449"
+
+  - type: book
+    title: "The LifeNode Project Bible: A Compendium of All Knowledge"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-01-23"
+    doi: "doi.org/10.5281/zenodo.18348984"
+    url: "https://doi.org/10.5281/zenodo.18348984"
+
+  - type: misc
+    title: "LifeNode Q-Core: Market Volatility Resilience & Capital Preservation Report (BTC-USD 2024-2026)"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-01-21"
+    doi: "doi.org/10.5281/zenodo.18327841"
+    url: "https://doi.org/10.5281/zenodo.18327841"
+
+  - type: misc
+    title: "Proof of Existence — LifeNode Eden (Node 0)"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-01-19"
+    doi: "doi.org/10.5281/zenodo.18304107"
+    url: "https://doi.org/10.5281/zenodo.18304107"
+
+  - type: misc
+    title: "LifeNode Practical Course"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-01-07"
+    doi: "doi.org/10.5281/zenodo.18171792"
+    url: "https://doi.org/10.5281/zenodo.18171792"
+
+  - type: book
+    title: "LifeNode Theory: Dlaczego Pomidory rosną tak a nie inaczej?"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2026-01-05"
+    doi: "doi.org/10.5281/zenodo.18155415"
+    url: "https://doi.org/10.5281/zenodo.18155415"
+
+  - type: misc
+    title: "LifeNode_2.0: LifeNode 2.1 — Node Ω / Complete System Integration"
+    authors:
+      - family-names: "Baran"
+        given-names: "Krzysztof"
+    date-released: "2025-10-31"
+    doi: "doi.org/10.5281/zenodo.17494868"
+    url: "https://doi.org/10.5281/zenodo.17494868"
