@@ -29,11 +29,17 @@ Każda zdrowa cywilizacja to w ujęciu LifeNode stabilny atraktor w przestrzeni 
 
 Spójrzmy na trzy wielkie cywilizacyjne Timescape’y:
 
+![Agrarian Timescape](NARRATIVE/Agrarian_Timescape.png)
+
 **1. Timescape Agrarny (Makro-BPB)**
 Przez tysiące lat ludzkość była entrainowana (zsynchronizowana) z ultra-wolnymi pulsacjami biosfery. Metronomem był cykl sezonowy, fotoperiodyzm, rytm dobowy i makroskopowe pulsacje gleby (np. rytmy grzybni). W tym Timescape’ie czas był "gęsty". Praca, odpoczynek, świętowanie i żałoba miały swoją fazę. Społeczeństwo było stabilnym solitonem – falą materii, która utrzymywała swój kształt dzięki rezonansowi z otoczeniem.
 
+![Industrial Timescape](NARRATIVE/Industrial_Timescape.png)
+
 **2. Timescape Industrialny (Zegar Newtona)**
 Rewolucja przemysłowa odcięła nas od naturalnego napędu Floqueta. Zamiast słońca i gleby, naszym metronomem stał się mechaniczny zegar i gwizdek fabryczny. Czas zaczął się "płaszczyć". Metryka Finslera zaczęła tracić swoją anizotropię, zamieniając się w sztywną, newtonowską siatkę. Zaczęliśmy traktować czas jako zasób do "wyciągnięcia", a nie jako krajobraz, w którym się poruszamy.
+
+![Digital Timescape](NARRATIVE/Digital_Timescape.png)
 
 **3. Timescape Cyfrowy (Płaska Pustka)**
 Współczesność to całkowity kolaps napędu Floqueta. Naszym "tłem" nie jest już pole geomagnetyczne Ziemi ani rytm sezonowy. Są nimi algorytmy, powiadomienia, high-frequency trading i sztuczne światło LED. W tym Timescape’ie metryka Finslera ulega całkowitemu spłaszczeniu ($C_{ijk} \to 0$). Czas staje się izotropowy, pusty i "tani" informacyjnie. 
@@ -78,8 +84,11 @@ Fundamentalne prawo LifeNode:
 
  A każda trajektoria potrzebuje rytmu, aby nie stać się szumem.
 
-☄️
+![Recovered Timescape](NARRATIVE/Recovered_Timescape.png)
 
+☀️
+☄️☄️☄️
+🌌
 ---
 
 29 czerwiec 2026
