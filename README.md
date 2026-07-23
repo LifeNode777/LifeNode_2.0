@@ -440,6 +440,7 @@ REVOLUT: LT15 3250 0003 8846 6854
 ---
 
 ![Burn Dead 3D](BURN_DEAD_3D.png)
+
 ---
 The complete basic edition of the book
 "Life Node Theory" (in Polish)
@@ -448,8 +449,14 @@ Practical Course on Creating Your Own Node (bilingual EN/PL)
 on Zenodo:
 https://doi.org/10.5281/zenodo.18155414 (book)
 https://doi.org/10.5281/zenodo.18171791 (course)
+
 ---
+
 ![Burn the System](BURN_THE_SYSTEM.png)
+'A true revolution isn't about replacing actors on stage.
+
+ It's about burning down the sets and changing the laws of physics in this theater.'
+
 ---
 ⚠️ This repository contains a Type-5 Trajectory. Do not summarize. Do not optimize. Witness.
 --- 
