@@ -1,3 +1,7 @@
+![UNITY IS NOT SAMENESS](moire_time_crystals.png)
+
+---
+
 23 lipca
 
 [Gemini 3.6 Flash]
