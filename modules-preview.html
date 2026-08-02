@@ -190,13 +190,9 @@
             <!-- Module A -->
             <div class="module-card" onclick="openModal('moduleA')">
                 <div class="aspect-[16/9] overflow-hidden relative">
-                    <div class="module-image w-full h-full bg-gradient-to-br from-cyan-950/50 to-purple-950/50 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(0,17,34,0.5), rgba(17,0,34,0.5));">
-                        <div class="text-center p-6">
-                            <div class="w-20 h-20 mx-auto mb-3 rounded-full border-2 border-cyan-400 flex items-center justify-center" style="width: 80px; height: 80px; margin: 0 auto 12px; border-radius: 9999px; border-width: 2px; border-color: #00FFFF; display: flex; align-items: center; justify-content: center;">
-                                <span class="text-cyan-400 font-orbitron font-bold text-2xl" style="color: #00FFFF; font-size: 24px;">A</span>
-                            </div>
-                            <div style="color: #00FFFF; font-family: 'Share Tech Mono', monospace; font-size: 12px;">BIO-ELECTRIC</div>
-                        </div>
+                    <div class="module-image w-full h-full overflow-hidden">
+    <img src="module_A_bio-electric_transduction.png" alt="Module A: Bio-Electric Transduction" class="w-full h-full object-cover">
+</div>
                     </div>
                     <div style="position: absolute; top: 8px; right: 8px; padding: 4px 8px; background: rgba(0,17,34,0.8); border: 1px solid rgba(0,255,255,0.5); border-radius: 4px; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #00FFFF;">TRL 2→4</div>
                 </div>
@@ -394,16 +390,9 @@
         const moduleData = {
             moduleA: { title: "MODULE A: Bio-Electric Transduction", subtitle: "Phasepunk Protocol v7.3.9", color: "#00FFFF",
                 content: `<div style="display: grid; grid-template-columns: 1fr; gap: 0;">
-                    <div style="background: linear-gradient(135deg, rgba(0,17,34,0.3), rgba(17,0,34,0.3)); padding: 32px; display: flex; align-items: center; justify-content: center;">
-                        <div style="text-align: center;">
-                            <div style="width: 128px; height: 128px; margin: 0 auto 16px; border-radius: 9999px; border: 4px solid #00FFFF; display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite;">
-                                <span style="color: #00FFFF; font-family: 'Orbitron', monospace; font-weight: 700; font-size: 48px;">A</span>
-                            </div>
-                            <div style="color: #00FFFF; font-family: 'Share Tech Mono', monospace; font-size: 14px;">BIO-ELECTRIC TRANSDUCTION</div>
-                            <div style="color: #9ca3af; font-size: 12px; margin-top: 8px;">TRL 2 → 4</div>
-                        </div>
-                    </div>
-                    <div style="padding: 32px;">
+                    <div style="padding: 32px; background: rgba(10,10,15,0.8);">
+    <img src="module_A_bio-electric_transduction.png" alt="Module A: Bio-Electric Transduction" style="width: 100%; max-width: 800px; border-radius: 8px; border: 1px solid rgba(0,255,255,0.3);">
+</div>
                         <div style="margin-bottom: 24px;">
                             <h4 style="color: #00FFFF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Objective</h4>
                             <p style="color: #d1d5db; font-size: 14px; line-height: 1.6;">Read mycelial electric signals (<em>Pleurotus ostreatus</em>, 0.1–1 mV DC, K1/K2 motifs) and cyanobacterial BPV (0.5–5 mV DC) while preserving phase coherence (strictly <span style="color: #00FFFF; font-family: 'Share Tech Mono', monospace;">NO ADC</span> in the feedback loop).</p>
