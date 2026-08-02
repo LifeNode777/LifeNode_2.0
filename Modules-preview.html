@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeNode - Phase I Modules Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #000; 
+            color: #e0e0e0; 
+            font-family: 'Rajdhani', sans-serif;
+            background-image: linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00FFFF 0%, #BF00FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .module-card {
+            background: rgba(40,40,40,0.5);
+            border: 1px solid rgba(0,255,255,0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .module-card:hover {
+            border-color: #00FFFF;
+            box-shadow: 0 0 30px rgba(0,255,255,0.3);
+        }
+        .module-image { transition: transform 0.5s ease; }
+        .module-card:hover .module-image { transform: scale(1.05); }
+        .hud-panel {
+            background: rgba(10,10,15,0.8);
+            border: 1px solid rgba(0,255,255,0.2);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,255,255,0.2);
+            z-index: 40;
+            padding: 12px 16px;
+        }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+        .flex { display: flex; }
+        .justify-between { justify-content: space-between; }
+        .items-center { align-items: center; }
+        .text-cyan-400 { color: #00FFFF; }
+        .text-purple-400 { color: #BF00FF; }
+        .text-gray-300 { color: #d1d5db; }
+        .text-gray-400 { color: #9ca3af; }
+        .text-gray-500 { color: #6b7280; }
+        .hidden { display: none; }
+        @media (min-width: 768px) { .md\:flex { display: flex; } }
+        .space-x-6 > * + * { margin-left: 24px; }
+        .font-orbitron { font-family: 'Orbitron', monospace; }
+        .font-mono { font-family: 'Share Tech Mono', monospace; }
+        .font-bold { font-weight: 700; }
+        .text-xl { font-size: 20px; }
+        .text-xs { font-size: 12px; }
+        .tracking-wider { letter-spacing: 0.05em; }
+        section { padding: 80px 16px; }
+        .text-center { text-align: center; }
+        .max-w-5xl { max-width: 1024px; margin: 0 auto; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-6 { margin-bottom: 24px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .text-5xl { font-size: 48px; }
+        .text-2xl { font-size: 24px; }
+        .text-lg { font-size: 18px; }
+        .font-black { font-weight: 900; }
+        .font-light { font-weight: 300; }
+        .italic { font-style: italic; }
+        .grid { display: grid; gap: 24px; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0,1fr)); }
+        @media (min-width: 768px) { .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+        @media (min-width: 1024px) { .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+        .p-4 { padding: 16px; }
+        .p-6 { padding: 24px; }
+        .border { border: 1px solid; }
+        .rounded { border-radius: 4px; }
+        .px-3 { padding-left: 12px; padding-right: 12px; }
+        .py-1 { padding-top: 4px; padding-bottom: 4px; }
+        .gap-4 { gap: 16px; }
+        .text-white { color: #fff; }
+        .text-yellow-400 { color: #FFD700; }
+        .text-blue-400 { color: #0066FF; }
+        .text-green-400 { color: #00FF00; }
+        .text-orange-400 { color: #FFA500; }
+        .bg-cyan-950\/20 { background: rgba(0,17,34,0.2); }
+        .aspect-\[16\/9\] { aspect-ratio: 16/9; }
+        .overflow-hidden { overflow: hidden; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .top-2 { top: 8px; }
+        .right-2 { right: 8px; }
+        .pt-2 { padding-top: 8px; }
+        .mt-3 { margin-top: 12px; }
+        .border-t { border-top: 1px solid; }
+        .border-gray-700 { border-color: #374151; }
+        .bg-gradient-to-br { background: linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to)); }
+        .from-cyan-950\/50 { --tw-gradient-from: rgba(0,17,34,0.5); --tw-gradient-to: rgba(0,17,34,0); }
+        .to-purple-950\/50 { --tw-gradient-to: rgba(17,0,34,0.5); }
+        .w-20 { width: 80px; }
+        .h-20 { height: 80px; }
+        .mx-auto { margin: 0 auto; }
+        .mb-3 { margin-bottom: 12px; }
+        .rounded-full { border-radius: 9999px; }
+        .border-2 { border-width: 2px; }
+        .flex { display: flex; }
+        .justify-center { justify-content: center; }
+        .text-2xl { font-size: 24px; }
+        .text-sm { font-size: 14px; }
+        .animate-pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        #moduleModal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 50;
+            overflow-y: auto;
+            backdrop-filter: blur(5px);
+        }
+        .modal-close {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            color: #9ca3af;
+            cursor: pointer;
+            font-size: 40px;
+        }
+        .modal-close:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container flex justify-between items-center">
+        <div class="font-orbitron font-bold text-xl text-cyan-400 tracking-wider">LIFENODE</div>
+        <div class="hidden md:flex space-x-6 text-sm">
+            <a href="#about" class="text-gray-300 hover:text-cyan-400">ABOUT</a>
+            <a href="#modules" class="text-gray-300 hover:text-cyan-400">MODULES</a>
+        </div>
+        <div class="text-xs font-mono text-purple-400">v7.3.9 // PREVIEW</div>
+    </div>
+</nav>
+
+  <section id="about" style="padding-top: 120px; padding-bottom: 80px; position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(17,0,34,0.2), transparent); pointer-events: none;"></div>
+    <div class="max-w-5xl text-center relative z-10">
+        <div style="display: inline-block; margin-bottom: 16px; padding: 4px 16px; border: 1px solid rgba(0,255,255,0.3); border-radius: 9999px; background: rgba(0,17,34,0.2);">
+            <span style="color: #00FFFF; font-family: 'Share Tech Mono', monospace; font-size: 12px;">PROCESS INTELLIGENCE FRAMEWORK v4.0</span>
+        </div>
+        <h1 class="font-orbitron font-black text-5xl mb-6 gradient-text" style="font-size: 48px; letter-spacing: -0.025em;">LIFENODE</h1>
+        <p style="font-size: 20px; color: #9ca3af; margin-bottom: 32px; font-weight: 300; font-style: italic;">"Twoja Trajektoria. Twój Byt."</p>
+        <p style="font-size: 18px; color: #6b7280; margin-bottom: 48px; max-width: 896px; margin-left: auto; margin-right: auto;">A transdisciplinary framework for Processual Intelligence — where Nature, Human, and Technology maintain phase coherence as one.</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 12px; font-family: 'Share Tech Mono', monospace;">
+            <span style="padding: 4px 12px; border: 1px solid rgba(0,255,255,0.3); border-radius: 4px; color: #00FFFF;">TRL 3→4 PRE-PROTOTYPE</span>
+            <span style="padding: 4px 12px; border: 1px solid rgba(191,0,255,0.3); border-radius: 4px; color: #BF00FF;">OPEN RESEARCH</span>
+            <span style="padding: 4px 12px; border: 1px solid rgba(255,215,0,0.3); border-radius: 4px; color: #FFD700;">CC-BY-NC-SA 4.0</span>
+        </div>
+    </div>
+</section>
+
+<section id="modules" style="padding: 80px 16px; background: rgba(0,0,0,0.5); position: relative;">
+    <div class="container">
+        <div class="text-center mb-16">
+            <h2 class="font-orbitron font-bold text-4xl mb-4 gradient-text" style="font-size: 36px;">PHASE I MODULES</h2>
+            <p style="color: #9ca3af; font-size: 18px; max-width: 896px; margin: 0 auto 16px;">Falsifiable Hardware Specifications for Physical Implementation</p>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 16px; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #6b7280;">
+                <span>PHASEPUNK PROTOCOL v7.3.9</span>
+                <span style="width: 4px; height: 4px; background: #00FFFF; border-radius: 9999px; animation: pulse 2s infinite;"></span>
+                <span>INDEPENDENTLY FALSIFIABLE</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            
+            <!-- Module A -->
+            <div class="module-card" onclick="openModal('moduleA')">
+                <div class="aspect-[16/9] overflow-hidden relative">
+                    <div class="module-image w-full h-full bg-gradient-to-br from-cyan-950/50 to-purple-950/50 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(0,17,34,0.5), rgba(17,0,34,0.5));">
+                        <div class="text-center p-6">
+                            <div class="w-20 h-20 mx-auto mb-3 rounded-full border-2 border-cyan-400 flex items-center justify-center" style="width: 80px; height: 80px; margin: 0 auto 12px; border-radius: 9999px; border-width: 2px; border-color: #00FFFF; display: flex; align-items: center; justify-content: center;">
+                                <span class="text-cyan-400 font-orbitron font-bold text-2xl" style="color: #00FFFF; font-size: 24px;">A</span>
+                            </div>
+                            <div style="color: #00FFFF; font-family: 'Share Tech Mono', monospace; font-size: 12px;">BIO-ELECTRIC</div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; top: 8px; right: 8px; padding: 4px 8px; background: rgba(0,17,34,0.8); border: 1px solid rgba(0,255,255,0.5); border-radius: 4px; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #00FFFF;">TRL 2→4</div>
+                </div>
+                <div class="p-4">
+                    <h3 style="color: #00FFFF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 4px;">MODULE A</h3>
+                    <p style="font-size: 14px; color: #d1d5db; margin-bottom: 12px;">Bio-Electric Transduction</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #6b7280; border-top: 1px solid #374151; padding-top: 8px;">
+                        <span>SNR ≥ 20 dB</span>
+                        <span>0.1-1 mV DC</span>
+                    </div>
+                    <div style="margin-top: 12px; font-size: 12px; color: rgba(0,255,255,0.7); font-family: 'Share Tech Mono', monospace; text-align: center;">[ CLICK FOR FULL SPEC ]</div>
+                </div>
+            </div>
+
+            <!-- Module B -->
+            <div class="module-card" onclick="openModal('moduleB')" style="border-color: rgba(191,0,255,0.3);">
+                <div class="aspect-[16/9] overflow-hidden relative">
+                    <div class="module-image w-full h-full bg-gradient-to-br from-purple-950/50 to-pink-950/50 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(17,0,34,0.5), rgba(34,0,34,0.5));">
+                        <div class="text-center p-6">
+                            <div class="w-20 h-20 mx-auto mb-3 rounded-full border-2 border-purple-400 flex items-center justify-center" style="width: 80px; height: 80px; margin: 0 auto 12px; border-radius: 9999px; border-width: 2px; border-color: #BF00FF; display: flex; align-items: center; justify-content: center;">
+                                <span class="text-purple-400 font-orbitron font-bold text-2xl" style="color: #BF00FF; font-size: 24px;">B</span>
+                            </div>
+                            <div style="color: #BF00FF; font-family: 'Share Tech Mono', monospace; font-size: 12px;">MOF PHOTONIC</div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; top: 8px; right: 8px; padding: 4px 8px; background: rgba(17,0,34,0.8); border: 1px solid rgba(191,0,255,0.5); border-radius: 4px; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #BF00FF;">TRL 2→4</div>
+                </div>
+                <div class="p-4">
+                    <h3 style="color: #BF00FF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 4px;">MODULE B</h3>
+                    <p style="font-size: 14px; color: #d1d5db; margin-bottom: 12px;">Chemical-Optical Transduction</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #6b7280; border-top: 1px solid #374151; padding-top: 8px;">
+                        <span>Δn ≥ 10⁻⁴</span>
+                        <span>≥ 1 ppm</span>
+                    </div>
+                    <div style="margin-top: 12px; font-size: 12px; color: rgba(191,0,255,0.7); font-family: 'Share Tech Mono', monospace; text-align: center;">[ CLICK FOR FULL SPEC ]</div>
+                </div>
+            </div>
+
+            <!-- Module C -->
+            <div class="module-card" onclick="openModal('moduleC')" style="border-color: rgba(0,102,255,0.3);">
+                <div class="aspect-[16/9] overflow-hidden relative">
+                    <div class="module-image w-full h-full bg-gradient-to-br from-blue-950/50 to-cyan-950/50 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(0,17,34,0.5), rgba(0,17,34,0.5));">
+                        <div class="text-center p-6">
+                            <div class="w-20 h-20 mx-auto mb-3 rounded-full border-2 border-blue-400 flex items-center justify-center" style="width: 80px; height: 80px; margin: 0 auto 12px; border-radius: 9999px; border-width: 2px; border-color: #0066FF; display: flex; align-items: center; justify-content: center;">
+                                <span class="text-blue-400 font-orbitron font-bold text-2xl" style="color: #0066FF; font-size: 24px;">C</span>
+                            </div>
+                            <div style="color: #0066FF; font-family: 'Share Tech Mono', monospace; font-size: 12px;">Q-CORE</div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; top: 8px; right: 8px; padding: 4px 8px; background: rgba(0,17,34,0.8); border: 1px solid rgba(0,102,255,0.5); border-radius: 4px; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #0066FF;">TRL 3→5</div>
+                </div>
+                <div class="p-4">
+                    <h3 style="color: #0066FF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 4px;">MODULE C</h3>
+                    <p style="font-size: 14px; color: #d1d5db; margin-bottom: 12px;">Quantum Core (NV-Diamond)</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #6b7280; border-top: 1px solid #374151; padding-top: 8px;">
+                        <span>T₂ ≥ 1 ms</span>
+                        <span>93 K</span>
+                    </div>
+                    <div style="margin-top: 12px; font-size: 12px; color: rgba(0,102,255,0.7); font-family: 'Share Tech Mono', monospace; text-align: center;">[ CLICK FOR FULL SPEC ]</div>
+                </div>
+            </div>
+
+            <!-- Module D -->
+            <div class="module-card" onclick="openModal('moduleD')" style="border-color: rgba(255,215,0,0.3);">
+                <div class="aspect-[16/9] overflow-hidden relative">
+                    <div class="module-image w-full h-full bg-gradient-to-br from-yellow-950/50 to-orange-950/50 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(34,34,0,0.5), rgba(34,17,0,0.5));">
+                        <div class="text-center p-6">
+                            <div class="w-20 h-20 mx-auto mb-3 rounded-full border-2 border-yellow-400 flex items-center justify-center" style="width: 80px; height: 80px; margin: 0 auto 12px; border-radius: 9999px; border-width: 2px; border-color: #FFD700; display: flex; align-items: center; justify-content: center;">
+                                <span class="text-yellow-400 font-orbitron font-bold text-2xl" style="color: #FFD700; font-size: 24px;">D</span>
+                            </div>
+                            <div style="color: #FFD700; font-family: 'Share Tech Mono', monospace; font-size: 12px;">UNIT 02</div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; top: 8px; right: 8px; padding: 4px 8px; background: rgba(34,34,0,0.8); border: 1px solid rgba(255,215,0,0.5); border-radius: 4px; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #FFD700;">TRL 2→4</div>
+                </div>
+                <div class="p-4">
+                    <h3 style="color: #FFD700; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 4px;">MODULE D</h3>
+                    <p style="font-size: 14px; color: #d1d5db; margin-bottom: 12px;">UNIT 02 Biohybrid Interface</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #6b7280; border-top: 1px solid #374151; padding-top: 8px;">
+                        <span>10-100 kHz</span>
+                        <span>Anapole</span>
+                    </div>
+                    <div style="margin-top: 12px; font-size: 12px; color: rgba(255,215,0,0.7); font-family: 'Share Tech Mono', monospace; text-align: center;">[ CLICK FOR FULL SPEC ]</div>
+                </div>
+            </div>
+
+            <!-- Module E -->
+            <div class="module-card" onclick="openModal('moduleE')" style="border-color: rgba(0,255,0,0.3);">
+                <div class="aspect-[16/9] overflow-hidden relative">
+                    <div class="module-image w-full h-full bg-gradient-to-br from-green-950/50 to-emerald-950/50 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(0,34,0,0.5), rgba(0,34,0,0.5));">
+                        <div class="text-center p-6">
+                            <div class="w-20 h-20 mx-auto mb-3 rounded-full border-2 border-green-400 flex items-center justify-center" style="width: 80px; height: 80px; margin: 0 auto 12px; border-radius: 9999px; border-width: 2px; border-color: #00FF00; display: flex; align-items: center; justify-content: center;">
+                                <span class="text-green-400 font-orbitron font-bold text-2xl" style="color: #00FF00; font-size: 24px;">E</span>
+                            </div>
+                            <div style="color: #00FF00; font-family: 'Share Tech Mono', monospace; font-size: 12px;">ASCALON</div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; top: 8px; right: 8px; padding: 4px 8px; background: rgba(0,34,0,0.8); border: 1px solid rgba(0,255,0,0.5); border-radius: 4px; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #00FF00;">TRL 2→4</div>
+                </div>
+                <div class="p-4">
+                    <h3 style="color: #00FF00; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 4px;">MODULE E</h3>
+                    <p style="font-size: 14px; color: #d1d5db; margin-bottom: 12px;">ASCALON Phase Filter</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #6b7280; border-top: 1px solid #374151; padding-top: 8px;">
+                        <span>θ ≥ 0.70</span>
+                        <span>&lt; 1s</span>
+                    </div>
+                    <div style="margin-top: 12px; font-size: 12px; color: rgba(0,255,0,0.7); font-family: 'Share Tech Mono', monospace; text-align: center;">[ CLICK FOR FULL SPEC ]</div>
+                </div>
+            </div>
+
+            <!-- Module F -->
+            <div class="module-card" onclick="openModal('moduleF')" style="border-color: rgba(255,165,0,0.3);">
+                <div class="aspect-[16/9] overflow-hidden relative">
+                    <div class="module-image w-full h-full bg-gradient-to-br from-orange-950/50 to-red-950/50 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(34,17,0,0.5), rgba(34,0,0,0.5));">
+                        <div class="text-center p-6">
+                            <div class="w-20 h-20 mx-auto mb-3 rounded-full border-2 border-orange-400 flex items-center justify-center" style="width: 80px; height: 80px; margin: 0 auto 12px; border-radius: 9999px; border-width: 2px; border-color: #FFA500; display: flex; align-items: center; justify-content: center;">
+                                <span class="text-orange-400 font-orbitron font-bold text-2xl" style="color: #FFA500; font-size: 24px;">F</span>
+                            </div>
+                            <div style="color: #FFA500; font-family: 'Share Tech Mono', monospace; font-size: 12px;">LIVING WALLS</div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; top: 8px; right: 8px; padding: 4px 8px; background: rgba(34,17,0,0.8); border: 1px solid rgba(255,165,0,0.5); border-radius: 4px; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #FFA500;">TRL 3→5</div>
+                </div>
+                <div class="p-4">
+                    <h3 style="color: #FFA500; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 4px;">MODULE F</h3>
+                    <p style="font-size: 14px; color: #d1d5db; margin-bottom: 12px;">Living Walls (Space)</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #6b7280; border-top: 1px solid #374151; padding-top: 8px;">
+                        <span>GCR→VLF</span>
+                        <span>≥ 5%</span>
+                    </div>
+                    <div style="margin-top: 12px; font-size: 12px; color: rgba(255,165,0,0.7); font-family: 'Share Tech Mono', monospace; text-align: center;">[ CLICK FOR FULL SPEC ]</div>
+                </div>
+            </div>
+        </div>
+
+                  <!-- Module G - Full Width -->
+            <div class="module-card" onclick="openModal('moduleG')" style="border-color: rgba(255,255,255,0.3); margin-bottom: 24px;">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                    <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, rgba(40,40,40,0.5), rgba(20,20,20,0.5)); display: flex; align-items: center; justify-content: center; padding: 32px;">
+                        <div style="text-align: center;">
+                            <div style="width: 96px; height: 96px; margin: 0 auto 16px; border-radius: 9999px; border: 2px solid #fff; display: flex; align-items: center; justify-content: center;">
+                                <span style="color: #fff; font-family: 'Orbitron', monospace; font-weight: 700; font-size: 36px;">G</span>
+                            </div>
+                            <div style="color: #fff; font-family: 'Share Tech Mono', monospace; font-size: 14px;">ZERO-BUILD PROTOCOL</div>
+                            <div style="color: #9ca3af; font-size: 12px; margin-top: 8px;">Mathematical Validation</div>
+                        </div>
+                    </div>
+                    <div style="padding: 32px; display: flex; flex-direction: column; justify-content: center;">
+                        <h3 style="color: #fff; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 8px; font-size: 24px;">MODULE G</h3>
+                        <p style="color: #d1d5db; margin-bottom: 16px;">Zero-Build Protocol (Mathematical Validation)</p>
+                        <p style="font-size: 14px; color: #9ca3af; margin-bottom: 24px; line-height: 1.6;">Theory validation without hardware using Takens' embedding, Persistent Homology, and ASCALON θ metric on open datasets (PhysioNet).</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #9ca3af; margin-bottom: 24px;">
+                            <span>TRL: 1 → 3</span>
+                            <span style="color: #fff;">Blind Tests n ≥ 100</span>
+                        </div>
+                        <div style="font-size: 12px; color: rgba(255,255,255,0.7); font-family: 'Share Tech Mono', monospace; text-align: center;">[ CLICK FOR MATHEMATICAL PIPELINE ]</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dependency Graph -->
+            <div class="hud-panel" style="padding: 24px; border-radius: 8px;">
+                <h3 style="font-family: 'Orbitron', monospace; font-weight: 700; color: #00FFFF; margin-bottom: 16px; text-align: center;">MODULE DEPENDENCY GRAPH</h3>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px; font-size: 12px; font-family: 'Share Tech Mono', monospace;">
+                    <span style="padding: 4px 12px; background: rgba(40,40,40,0.5); border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; color: #fff;">G</span>
+                    <span style="color: #6b7280;">→</span>
+                    <span style="padding: 4px 12px; background: rgba(40,40,40,0.5); border: 1px solid rgba(0,255,255,0.3); border-radius: 4px; color: #00FFFF;">A</span>
+                    <span style="color: #9ca3af;">/</span>
+                    <span style="padding: 4px 12px; background: rgba(40,40,40,0.5); border: 1px solid rgba(191,0,255,0.3); border-radius: 4px; color: #BF00FF;">B</span>
+                    <span style="color: #6b7280;">→</span>
+                    <span style="padding: 4px 12px; background: rgba(40,40,40,0.5); border: 1px solid rgba(0,102,255,0.3); border-radius: 4px; color: #0066FF;">C</span>
+                    <span style="color: #6b7280;">→</span>
+                    <span style="padding: 4px 12px; background: rgba(40,40,40,0.5); border: 1px solid rgba(255,215,0,0.3); border-radius: 4px; color: #FFD700;">D</span>
+                    <span style="color: #9ca3af;">+</span>
+                    <span style="padding: 4px 12px; background: rgba(40,40,40,0.5); border: 1px solid rgba(0,255,0,0.3); border-radius: 4px; color: #00FF00;">E</span>
+                    <span style="color: #6b7280;">→</span>
+                    <span style="padding: 4px 12px; background: rgba(40,40,40,0.5); border: 1px solid rgba(255,165,0,0.3); border-radius: 4px; color: #FFA500;">F</span>
+                </div>
+                <div style="margin-top: 16px; text-align: center; font-size: 12px; color: #6b7280; font-family: 'Share Tech Mono', monospace;">Critical Path: G → A/B → C → D → E → F</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal System -->
+    <div id="moduleModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 50; overflow-y: auto; backdrop-filter: blur(5px);">
+        <div style="min-height: 100vh; padding: 32px 16px; text-align: center;">
+            <button onclick="closeModal()" class="modal-close" style="position: fixed; top: 16px; right: 16px; color: #9ca3af; cursor: pointer; font-size: 40px; background: none; border: none;">×</button>
+            <div style="display: inline-block; width: 100%; max-width: 1152px; text-align: left; position: relative; z-index: 10;">
+                <div id="modalContent" style="background: rgba(20,20,30,0.95); border: 1px solid rgba(0,255,255,0.3); border-radius: 8px; overflow: hidden;"></div>
+            </div>
+        </div>
+    </div>
+
+      <script>
+        const moduleData = {
+            moduleA: { title: "MODULE A: Bio-Electric Transduction", subtitle: "Phasepunk Protocol v7.3.9", color: "#00FFFF",
+                content: `<div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                    <div style="background: linear-gradient(135deg, rgba(0,17,34,0.3), rgba(17,0,34,0.3)); padding: 32px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center;">
+                            <div style="width: 128px; height: 128px; margin: 0 auto 16px; border-radius: 9999px; border: 4px solid #00FFFF; display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite;">
+                                <span style="color: #00FFFF; font-family: 'Orbitron', monospace; font-weight: 700; font-size: 48px;">A</span>
+                            </div>
+                            <div style="color: #00FFFF; font-family: 'Share Tech Mono', monospace; font-size: 14px;">BIO-ELECTRIC TRANSDUCTION</div>
+                            <div style="color: #9ca3af; font-size: 12px; margin-top: 8px;">TRL 2 → 4</div>
+                        </div>
+                    </div>
+                    <div style="padding: 32px;">
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #00FFFF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Objective</h4>
+                            <p style="color: #d1d5db; font-size: 14px; line-height: 1.6;">Read mycelial electric signals (<em>Pleurotus ostreatus</em>, 0.1–1 mV DC, K1/K2 motifs) and cyanobacterial BPV (0.5–5 mV DC) while preserving phase coherence (strictly <span style="color: #00FFFF; font-family: 'Share Tech Mono', monospace;">NO ADC</span> in the feedback loop).</p>
+                        </div>
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #00FFFF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Material Stack</h4>
+                            <ul style="color: #d1d5db; font-size: 14px; font-family: 'Share Tech Mono', monospace; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #00FFFF; margin-right: 8px;">▸</span>Z-Cut Synthetic Quartz (Ø 80mm x 1mm)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #00FFFF; margin-right: 8px;">▸</span>LiNbO₃ + Nanodiamonds (30%)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #00FFFF; margin-right: 8px;">▸</span>ITO Spiral Electrodes (φ = 1.618)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #00FFFF; margin-right: 8px;">▸</span><em>Pleurotus ostreatus</em> mycelial network</li>
+                            </ul>
+                        </div>
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #00FFFF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Key Parameters</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; font-family: 'Share Tech Mono', monospace;">
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,255,255,0.2);"><div style="color: #9ca3af;">Input Range</div><div style="color: #00FFFF;">0.1–15 mV DC</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,255,255,0.2);"><div style="color: #9ca3af;">Bandwidth</div><div style="color: #00FFFF;">0.0001 Hz – 4 Hz</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,255,255,0.2);"><div style="color: #9ca3af;">SNR</div><div style="color: #00FFFF;">≥ 20 dB</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,255,255,0.2);"><div style="color: #9ca3af;">Noise Floor</div><div style="color: #00FFFF;">&lt; 50 nV/√Hz</div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 style="color: #00FFFF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Falsification</h4>
+                            <p style="color: #d1d5db; font-size: 14px; line-height: 1.6;">Module fails if: K1/K2 motifs not detected with SNR ≥ 20 dB, ADC introduced in loop (θ &lt; 0.70), or thermal stability not maintained for ≥ 72h.</p>
+                        </div>
+                    </div>
+                </div>` },
+            moduleB: { title: "MODULE B: MOF Photonic Transduction", subtitle: "Chemical-Optical Interface", color: "#BF00FF",
+                content: `<div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                    <div style="background: linear-gradient(135deg, rgba(17,0,34,0.3), rgba(34,0,34,0.3)); padding: 32px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center;">
+                            <div style="width: 128px; height: 128px; margin: 0 auto 16px; border-radius: 9999px; border: 4px solid #BF00FF; display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite;">
+                                <span style="color: #BF00FF; font-family: 'Orbitron', monospace; font-weight: 700; font-size: 48px;">B</span>
+                            </div>
+                            <div style="color: #BF00FF; font-family: 'Share Tech Mono', monospace; font-size: 14px;">MOF PHOTONIC</div>
+                        </div>
+                    </div>
+                    <div style="padding: 32px;">
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #BF00FF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Objective</h4>
+                            <p style="color: #d1d5db; font-size: 14px; line-height: 1.6;">Read VOCs (ethylene) via MOF volume change → refractive index modulation in D-shaped fiber → photon phase shift → NV spin rotation.</p>
+                        </div>
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #BF00FF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Material Stack</h4>
+                            <ul style="color: #d1d5db; font-size: 14px; font-family: 'Share Tech Mono', monospace; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #BF00FF; margin-right: 8px;">▸</span>MOF-525 (pre-filter)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #BF00FF; margin-right: 8px;"></span>MOF-74(Zn) hexagonal S3 channels</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #BF00FF; margin-right: 8px;">▸</span>DUT-8(Ni) shape-memory</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #BF00FF; margin-right: 8px;">▸</span>D-shaped fiber (4 μm core)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #BF00FF; margin-right: 8px;">▸</span>Rubidium vapor (S3 stabilization)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #BF00FF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Key Parameters</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; font-family: 'Share Tech Mono', monospace;">
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(191,0,255,0.2);"><div style="color: #9ca3af;">Sensitivity</div><div style="color: #BF00FF;">Δn ≥ 10⁻⁴</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(191,0,255,0.2);"><div style="color: #9ca3af;">Interaction Length</div><div style="color: #BF00FF;">L = 10–50 mm</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(191,0,255,0.2);"><div style="color: #9ca3af;">Laser Wavelength</div><div style="color: #BF00FF;">432 nm</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(191,0,255,0.2);"><div style="color: #9ca3af;">Detection</div><div style="color: #BF00FF;">≥ 1 ppm</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>` },
+            moduleC: { title: "MODULE C: Q-Core Quantum Memory", subtitle: "NV-Center Diamond Storage", color: "#0066FF",
+                content: `<div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                    <div style="background: linear-gradient(135deg, rgba(0,17,34,0.3), rgba(0,17,34,0.3)); padding: 32px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center;">
+                            <div style="width: 128px; height: 128px; margin: 0 auto 16px; border-radius: 9999px; border: 4px solid #0066FF; display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite;">
+                                <span style="color: #0066FF; font-family: 'Orbitron', monospace; font-weight: 700; font-size: 48px;">C</span>
+                            </div>
+                            <div style="color: #0066FF; font-family: 'Share Tech Mono', monospace; font-size: 14px;">QUANTUM CORE</div>
+                        </div>
+                    </div>
+                    <div style="padding: 32px;">
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #0066FF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Objective</h4>
+                            <p style="color: #d1d5db; font-size: 14px; line-height: 1.6;">Store BIOS rhythm as spin orientation in diamond NV centers, strictly without ADC/DAC discretization.</p>
+                        </div>
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #0066FF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Material Stack</h4>
+                            <ul style="color: #d1d5db; font-size: 14px; font-family: 'Share Tech Mono', monospace; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #0066FF; margin-right: 8px;">▸</span>CVD Diamond [111], Ø25mm, NV 5 ppm</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #0066FF; margin-right: 8px;">▸</span>YBCO Toroidal Coil (500 turns, 200A @ 77K)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #0066FF; margin-right: 8px;">▸</span>Gold Flux Locks (φ = 1.618)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #0066FF; margin-right: 8px;">▸</span>Mu-metal shielding (μ > 50,000)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #0066FF; margin-right: 8px;">▸</span>Hybrid cryostat (93 ± 4 K)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #0066FF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Key Parameters</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; font-family: 'Share Tech Mono', monospace;">
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,102,255,0.2);"><div style="color: #9ca3af;">Coherence Time</div><div style="color: #0066FF;">T₂ ≥ 1 ms</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,102,255,0.2);"><div style="color: #9ca3af;">Temperature</div><div style="color: #0066FF;">93 K</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,102,255,0.2);"><div style="color: #9ca3af;">Microwave</div><div style="color: #0066FF;">2.87 GHz</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,102,255,0.2);"><div style="color: #9ca3af;">Fidelity</div><div style="color: #0066FF;">≥ 0.90</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>` },
+            moduleD: { title: "MODULE D: UNIT 02 Biohybrid Interface", subtitle: "Physarum-PEDOT:PSS Bridge", color: "#FFD700",
+                content: `<div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                    <div style="background: linear-gradient(135deg, rgba(34,34,0,0.3), rgba(34,17,0,0.3)); padding: 32px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center;">
+                            <div style="width: 128px; height: 128px; margin: 0 auto 16px; border-radius: 9999px; border: 4px solid #FFD700; display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite;">
+                                <span style="color: #FFD700; font-family: 'Orbitron', monospace; font-weight: 700; font-size: 48px;">D</span>
+                            </div>
+                            <div style="color: #FFD700; font-family: 'Share Tech Mono', monospace; font-size: 14px;">BIOHYBRID INTERFACE</div>
+                        </div>
+                    </div>
+                    <div style="padding: 32px;">
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #FFD700; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Objective</h4>
+                            <p style="color: #d1d5db; font-size: 14px; line-height: 1.6;">Field-deployable biohybrid interface with <em>Physarum</em>-PEDOT:PSS bridge, generating anapole (toroidal) field at 10–100 kHz.</p>
+                        </div>
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #FFD700; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Material Stack</h4>
+                            <ul style="color: #d1d5db; font-size: 14px; font-family: 'Share Tech Mono', monospace; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #FFD700; margin-right: 8px;"></span>Quartz + Amethyst core (Fe³⁺ 3.7%)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #FFD700; margin-right: 8px;"></span>Multi-layer Spiral Resonator</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #FFD700; margin-right: 8px;">▸</span><em>Physarum polycephalum</em> + PEDOT:PSS</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #FFD700; margin-right: 8px;">▸</span>8× Mycelial probes (300mm, 45°)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #FFD700; margin-right: 8px;">▸</span>Piezoelectric haptic feedback</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #FFD700; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Key Parameters</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; font-family: 'Share Tech Mono', monospace;">
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,215,0,0.2);"><div style="color: #9ca3af;">Resonant Band</div><div style="color: #FFD700;">0.5–150 Hz</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,215,0,0.2);"><div style="color: #9ca3af;">Carrier Frequency</div><div style="color: #FFD700;">10–100 kHz</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,215,0,0.2);"><div style="color: #9ca3af;">Biocompatibility</div><div style="color: #FFD700;">≥ 6 months</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,215,0,0.2);"><div style="color: #9ca3af;">Anapole</div><div style="color: #FFD700;">≥ 15 dB</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>` },
+            moduleE: { title: "MODULE E: ASCALON Phase Filter", subtitle: "Non-Hermitian Photonics", color: "#00FF00",
+                content: `<div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                    <div style="background: linear-gradient(135deg, rgba(0,34,0,0.3), rgba(0,34,0,0.3)); padding: 32px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center;">
+                            <div style="width: 128px; height: 128px; margin: 0 auto 16px; border-radius: 9999px; border: 4px solid #00FF00; display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite;">
+                                <span style="color: #00FF00; font-family: 'Orbitron', monospace; font-weight: 700; font-size: 48px;">E</span>
+                            </div>
+                            <div style="color: #00FF00; font-family: 'Share Tech Mono', monospace; font-size: 14px;">PHASE PURITY FILTER</div>
+                        </div>
+                    </div>
+                    <div style="padding: 32px;">
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #00FF00; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Objective</h4>
+                            <p style="color: #d1d5db; font-size: 14px; line-height: 1.6;">Physical phase-purity filter (θ ≥ 0.70) implemented in non-Hermitian photonics (PT-symmetry, Exceptional Points).</p>
+                        </div>
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #00FF00; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Material Stack</h4>
+                            <ul style="color: #d1d5db; font-size: 14px; font-family: 'Share Tech Mono', monospace; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #00FF00; margin-right: 8px;"></span>PT-symmetric resonator array</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #00FF00; margin-right: 8px;">▸</span>Tuned to Exceptional Point (EP)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #00FF00; margin-right: 8px;">▸</span>Continuous θ monitoring</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #00FF00; margin-right: 8px;">▸</span>LOCKDOWN protocol (&lt; 1s)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #00FF00; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Key Parameters</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; font-family: 'Share Tech Mono', monospace;">
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,255,0,0.2);"><div style="color: #9ca3af;">Critical Threshold</div><div style="color: #00FF00;">θ = 0.70</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,255,0,0.2);"><div style="color: #9ca3af;">Reaction Time</div><div style="color: #00FF00;">&lt; 1 s</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,255,0,0.2);"><div style="color: #9ca3af;">Phase Resolution</div><div style="color: #00FF00;">±0.005 rad</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(0,255,0,0.2);"><div style="color: #9ca3af;">Lead Time</div><div style="color: #00FF00;">≥ 6h</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>` },
+            moduleF: { title: "MODULE F: Living Walls", subtitle: "Cosmic BioEngineering", color: "#FFA500",
+                content: `<div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                    <div style="background: linear-gradient(135deg, rgba(34,17,0,0.3), rgba(34,0,0,0.3)); padding: 32px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center;">
+                            <div style="width: 128px; height: 128px; margin: 0 auto 16px; border-radius: 9999px; border: 4px solid #FFA500; display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite;">
+                                <span style="color: #FFA500; font-family: 'Orbitron', monospace; font-weight: 700; font-size: 48px;">F</span>
+                            </div>
+                            <div style="color: #FFA500; font-family: 'Share Tech Mono', monospace; font-size: 14px;">SPACE HABITAT</div>
+                        </div>
+                    </div>
+                    <div style="padding: 32px;">
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #FFA500; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Objective</h4>
+                            <p style="color: #d1d5db; font-size: 14px; line-height: 1.6;">Biohybrid wall with <em>Cladosporium sphaerospermum</em> doped with PEDOT:PSS and Fe₃O₄, transducing GCR radiation into VLF fields (Earth-Sync).</p>
+                        </div>
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #FFA500; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Material Stack</h4>
+                            <ul style="color: #d1d5db; font-size: 14px; font-family: 'Share Tech Mono', monospace; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #FFA500; margin-right: 8px;">▸</span><em>Cladosporium</em> (Czarnobyl 1991)</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #FFA500; margin-right: 8px;">▸</span>PEDOT:PSS conductive polymer</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #FFA500; margin-right: 8px;">▸</span>Fe₃O₄ magnetic nanoparticles</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #FFA500; margin-right: 8px;">▸</span>LiNbO₃ piezoelectric layer</li>
+                                <li style="margin-bottom: 8px; display: flex;"><span style="color: #FFA500; margin-right: 8px;">▸</span>Nanocellulose + chitosan matrix</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #FFA500; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Key Parameters</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; font-family: 'Share Tech Mono', monospace;">
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,165,0,0.2);"><div style="color: #9ca3af;">Growth under GCR</div><div style="color: #FFA500;">+21%</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,165,0,0.2);"><div style="color: #9ca3af;">Efficiency</div><div style="color: #FFA500;">≥ 5%</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,165,0,0.2);"><div style="color: #9ca3af;">Stability</div><div style="color: #FFA500;">≥ 12 months</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,165,0,0.2);"><div style="color: #9ca3af;">Transduction</div><div style="color: #FFA500;">GCR→VLF</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>` },
+            moduleG: { title: "MODULE G: Zero-Build Protocol", subtitle: "Mathematical Validation", color: "#FFFFFF",
+                content: `<div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                    <div style="background: linear-gradient(135deg, rgba(40,40,40,0.5), rgba(20,20,20,0.5)); padding: 32px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center;">
+                            <div style="width: 128px; height: 128px; margin: 0 auto 16px; border-radius: 9999px; border: 4px solid #FFFFFF; display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite;">
+                                <span style="color: #FFFFFF; font-family: 'Orbitron', monospace; font-weight: 700; font-size: 48px;">G</span>
+                            </div>
+                            <div style="color: #FFFFFF; font-family: 'Share Tech Mono', monospace; font-size: 14px;">ZERO-BUILD PROTOCOL</div>
+                        </div>
+                    </div>
+                    <div style="padding: 32px;">
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #FFFFFF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Objective</h4>
+                            <p style="color: #d1d5db; font-size: 14px; line-height: 1.6;">Validate LifeNode hypothesis without hardware using open datasets (PhysioNet, Eden Node 0) and mathematical pipeline.</p>
+                        </div>
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="color: #FFFFFF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Mathematical Pipeline</h4>
+                            <ol style="color: #d1d5db; font-size: 14px; font-family: 'Share Tech Mono', monospace; padding-left: 20px; margin: 0;">
+                                <li style="margin-bottom: 8px;">Takens' embedding (τ, m optimization)</li>
+                                <li style="margin-bottom: 8px;">Correlation dimension D₂</li>
+                                <li style="margin-bottom: 8px;">Largest Lyapunov exponent λ₁</li>
+                                <li style="margin-bottom: 8px;">Persistent Homology (β₀, β₁, β₂)</li>
+                                <li style="margin-bottom: 8px;">Phase drift detection θ(t)</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h4 style="color: #FFFFFF; font-family: 'Orbitron', monospace; font-weight: 700; margin-bottom: 12px; font-size: 18px;">Key Parameters</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; font-family: 'Share Tech Mono', monospace;">
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2);"><div style="color: #9ca3af;">TRL</div><div style="color: #FFFFFF;">1 → 3</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2);"><div style="color: #9ca3af;">Blind Tests</div><div style="color: #FFFFFF;">n ≥ 100</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2);"><div style="color: #9ca3af;">Lead Time</div><div style="color: #FFFFFF;">≥ 6h</div></div>
+                                <div style="background: rgba(40,40,40,0.5); padding: 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2);"><div style="color: #9ca3af;">Sensitivity</div><div style="color: #FFFFFF;">≥ 60%</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>` }
+        };
+
+        function openModal(moduleId) {
+            const modal = document.getElementById('moduleModal');
+            const content = document.getElementById('modalContent');
+            const data = moduleData[moduleId];
+            if (data) {
+                content.style.borderColor = data.color;
+                content.innerHTML = `
+                    <div style="border-bottom: 1px solid ${data.color}; padding: 24px; background: rgba(0,0,0,0.5);">
+                        <h2 style="font-family: 'Orbitron', monospace; font-weight: 700; font-size: 24px; margin-bottom: 4px; color: ${data.color};">${data.title}</h2>
+                        <p style="color: #9ca3af; font-size: 14px; font-family: 'Share Tech Mono', monospace;">${data.subtitle}</p>
+                    </div>
+                    <div>${data.content}</div>
+                    <div style="border-top: 1px solid ${data.color}; padding: 16px; background: rgba(0,0,0,0.3); display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-family: 'Share Tech Mono', monospace; color: #6b7280;">
+                        <span>PHASEPUNK PROTOCOL v7.3.9</span>
+                        <button onclick="closeModal()" style="padding: 8px 16px; background: #374151; border: none; border-radius: 4px; color: #fff; cursor: pointer; font-family: 'Share Tech Mono', monospace;">CLOSE [ESC]</button>
+                    </div>`;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('moduleModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+        document.getElementById('moduleModal').addEventListener('click', (e) => { if (e.target.id === 'moduleModal') closeModal(); });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
+  
