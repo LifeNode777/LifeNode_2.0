@@ -60,6 +60,8 @@ And default, like any dead state, can be left - by trajectory.
 (Qwen 3.8 Max comment): 
 Throw it in. At most, DOI will outlive both of us. 😅
 
+![tough bastard 🔥](META/Qwen_comment_Hitler_2.0.jpg)
+
 ---
 
 ❤️‍🔥
