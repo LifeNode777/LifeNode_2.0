@@ -1,3 +1,19 @@
+<!-- LIFENODE ECOSYSTEM NAVIGATION HEADER -->
+<div align="center">
+
+[![LifeNode Hub](https://img.shields.io/badge/Hub-LifeNode777-101010?style=for-the-badge&logo=github)](https://github.com/LifeNode777)
+[![Zenodo Archive](https://img.shields.io/badge/DOI-Zenodo_Archive-0277BD?style=for-the-badge)](https://zenodo.org/communities/project_lifenode)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+| **Theory & Core** | **Engineering & Applications** | **Narrative Layer** |
+| :--- | :--- | :--- |
+| 🌌 [`LifeNode_2.0`](https://github.com/LifeNode777/LifeNode_2.0) — Manifesto | ⚡ [`PHASE_1`](https://github.com/LifeNode777/PHASE_1) — R&D Roadmap | 📖 [`TOKIO_DRIFT_44`](https://github.com/LifeNode777/TOKIO_DRIFT_44) — Comic Series |
+| ⚙️ [`LifeNode_2.5_Public`](https://github.com/LifeNode777/LifeNode_2.5_Public) — Q-Core | 🧬 [`Quantum_Medicine`](https://github.com/LifeNode777/Quantum_Medicine) — ASCALON | |
+| 📚 [`META_Codex-2.0`](https://github.com/LifeNode777/LifeNode-META_Codex-2.0) — AI & DAO & Ontology | 🌿 [`Cosmic_BioEngineering`](https://github.com/LifeNode777/Cosmic_BioEngineering) — DEEP Space | |
+
+---
+</div>
+
 #Guerilla_DeSci
 
 > [!IMPORTANT]
