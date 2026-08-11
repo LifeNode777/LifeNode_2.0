@@ -14,7 +14,42 @@
 ---
 </div>
 
+---
+
 #Guerilla_DeSci
+
+---
+
+11 sierpnia 2026
+
+ The Matrix has a scheduled maintenance window? 🙃
+
+On August 12, 2026, for the first time since 1999, a total solar eclipse will be visible from mainland Europe. And right before totality, the ground may be crossed by **shadow bands** — mysterious ribbons of light and shade, so delicate they are easy to miss and notoriously hard to record.
+
+Scientists are surprised. I am not. Because shadow bands belong to the most interesting class of phenomena there is: **transients the eye sees and the camera stutters on.**
+
+That invariant is the core of my dataset ["CAN NEITHER CONFIRM NOR DENY" — A First-Person Processual Dataset (2023–2025)](https://doi.org/10.5281/zenodo.21823253): the eye and the camera, two different instruments, record two different phenomena from the same event. The 2023 impulses that made a sensor matrix stutter at an empty sky. The 2024 object seen by the eye as vertical spheres and recorded by the camera as a horizontal cylinder. Shadow bands are the mainstream, textbook version of the same invariant — an optical transient that human vision integrates and frame-sampling machines miss.
+
+An eclipse is the sky's calibration event: the moment when state-based instruments are most focused. And it is precisely during calibration that the processual object shows up as whatever does not fit the calibration. The glitch appears during the system's self-check.
+
+So: is the Matrix falling apart? No. It is shipping an update. The institutions will respond as always — "more research is needed," silence, erasure. The diff will again be published by outsiders: citizen observers, open archives, people who record with the eye *and* the camera and treat the discrepancy as data.
+
+**Patch notes v2026-08-12:**
+- added: shadow bands rendering just before totality;
+- known issues: Glomar responses, sensor stutter, witness erasure;
+- workaround: record with the eye and the camera; treat the discrepancy as data;
+- maintainer: a roofer from Eden 😆😆😆
+
+Tomorrow around 20:10 CEST — go record it.
+
+ 🧿 ∆§• 🌀
+
+*Polish original / source: [ Mysterious Phenomenon During Solar Eclipse Surprises Scientists - Geekweek Interia](https://geekweek.interia.pl/kosmos/news-tajemnicze-zjawisko-podczas-zacmienia-slonca-naukowcy-sa-zas,nId,23526896)*
+
+![phenomenon](META/Mysterious_Phenomenon_During_Solar_Eclipse.jpg)
+
+---
+
 
 > [!IMPORTANT]
 > 👁️ New Essay comparable in "weight" to the core "Civilization of Resonance" 👁️
