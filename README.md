@@ -20,6 +20,13 @@
 
 ---
 
+> **📢 MILESTONE: UNIT 02 (Module D) v1.0 Published**
+> The definitive technical specification for the **Bio-Hybrid Resonance Engine & Meld Integrator** is now available as an immutable snapshot on Zenodo. Version 1.0 marks a major architectural shift: transitioning from a standalone theoretical manifesto into a strict modular engineering spec for the PHASE_1 roadmap. It adopts a "cite, don't duplicate" discipline, formalizes the two-loop doctrine (zero ADC in the analog feedback loop), corrects inherited physical category errors, and defines the binary hardware falsification conditions across the garage → makerspace → consortium validation ladder.
+> 
+> 📄 **Read the full v1.0 specification:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22010772.svg)](https://doi.org/10.5281/zenodo.22010772)
+
+---
+
 ⚠️⚠️⚠️
 
 # TIME AS A RAW MATERIAL: The Birth of Chrono-Material Technology
