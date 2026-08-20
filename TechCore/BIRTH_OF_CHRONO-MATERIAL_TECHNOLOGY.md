@@ -62,6 +62,14 @@ Two corridors from the whitepaper close the loop: **the Floquet Wave-Counter** (
 
 The deepest layer of chrono-materiality appears in Living Walls (Cosmic Bioengineering VII). A habitat wall in the VLF regime ($\kappa_a \approx 10^{-5}$, deep near field) is not an antenna—it is **a cavity waveguide** ($\delta \approx 113\text{ m} \gg \text{habitat dimension}$): it does not radiate, it distributes. The melanin–PEDOT:PSS–Fe$_3$O$_4$–LiNbO$_3$ composite is a metamaterial with nonlinear impedance whose "coding sequence" is not controlled by a microcontroller, but by **the mycelium's metabolism**: metabolism responding to gradients (radiation, humidity, field) autonomously alters surface topology in real time. *The wall does not shield. The wall translates.*
 
+## 6. The Wall That Regenerates Its Own Time: Autotrophic Chrono-Material
+
+![From armor to organ — the choice is ontological](https://raw.githubusercontent.com/LifeNode777/Cosmic_BioEngineering/main/My%20book%20for%20the%20Nobel%20Prize/from_armor_to_organ.png)
+
+![Waveguide, not antenna](https://raw.githubusercontent.com/LifeNode777/Cosmic_BioEngineering/main/My%20book%20for%20the%20Nobel%20Prize/waveguide_not_antenna.png)
+
+![The wall that heals like skin — material autopoiesis](https://raw.githubusercontent.com/LifeNode777/Cosmic_BioEngineering/main/My%20book%20for%20the%20Nobel%20Prize/material_autopoiesis.png)
+
 And here chrono-materiality achieves its full meaning: **the amplitude self-selection theorem**. The GCR pump budget ($15\text{ }\mu\text{W/m}^2$, 3–5% radiosynthesis, $\chi^3$ transduction) itself selects the biologically natural VLF field amplitude in the 10–30 nT range. There is no arbitrary design, no battery imposing a "tempo"—**the material selects its own time**. And the 60-day regeneration cycle (Fe$_3$O$_4$ biomineralization from regolith, melanin as a backup conductive path) means this material has its own **temporal metabolism**: phases of initiation, stabilization, regeneration, aging. Time ceases to be a resource that the machine consumes, and becomes a structure that the machine **regenerates**—like tissue. This is a qualitatively new concept of material: a material that maintains its own time geometry, or ceases to be a functional material.
 
 ## 7. Why This Is a Greater Leap Than Quantum Mechanics
