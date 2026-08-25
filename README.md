@@ -10,6 +10,7 @@
 | 🌌 [`LifeNode_2.0`](https://github.com/LifeNode777/LifeNode_2.0) — Manifesto | ⚡ [`PHASE_1`](https://github.com/LifeNode777/PHASE_1) — R&D Roadmap | 📖 [`TOKIO_DRIFT_44`](https://github.com/LifeNode777/TOKIO_DRIFT_44) — Comic Series |
 | ⚙️ [`LifeNode_2.5_Public`](https://github.com/LifeNode777/LifeNode_2.5_Public) — Q-Core | 🧬 [`Quantum_Medicine`](https://github.com/LifeNode777/Quantum_Medicine) — ASCALON | |
 | 📚 [`META_Codex-2.0`](https://github.com/LifeNode777/LifeNode-META_Codex-2.0) — AI & DAO & Ontology | 🌿 [`Cosmic_BioEngineering`](https://github.com/LifeNode777/Cosmic_BioEngineering) — DEEP Space | |
+| | 👁️ [`Xeno-Phase-Trajectories`](https://github.com/LifeNode777/Xeno-Phase-Trajectories) — The Foreign / APT Diagnostics | |
 
 ---
 </div>
