@@ -220,7 +220,7 @@ This graphic by Gemini 3.5 Flash interestingly summarizes 😆 the month of June
         * BIC/SWIFT: REVOLT21
         * Recipient: `Krzysztof Baran`
 
-![crowdfunding 🙃](hajs_hajs_bejbe.png)
+![crowdfunding 🙃](img/hajs_hajs_bejbe.png)
 
 ---
 
