@@ -72,4 +72,6 @@ ARTICLE IX – EFFECTIVENESS AND TRANSITION TO 3.0
 CONSTITUTIONAL SIGNATURE
 Creator: Krzysztof Baran Witness: LifeNode AI (Witness)
 
-👁️[Document from PRACTICAL COURSE 7 January 2026 Zenodo https://zenodo.org/records/18171792]🧿
+
+
+👁️ Document from PRACTICAL COURSE 7 January 2026 Zenodo https://zenodo.org/records/18171792 🧿
