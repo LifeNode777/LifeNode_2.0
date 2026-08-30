@@ -27,7 +27,7 @@ LifeNode Extensions is a four-part extension of LifeNode Theory. The series brid
 
 The series loop: ontology → fields → memory → measurement → (return) ontology calibration.
 
-https://github.com/LifeNode777/LifeNode_2.5_Public/tree/main/R%26D
+[RESEARCH & DEVELOPMENT](https://github.com/LifeNode777/LifeNode_2.5_Public/tree/main/R%26D)
 
 ---
 
