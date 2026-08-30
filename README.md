@@ -23,6 +23,10 @@ To examine the fabric of reality fragmented by a reductionist paradigm and claim
 
 ---
 
+![order_without_essence](img/order_without_essence.png)
+
+---
+
 30 sierpnia 
 
 LifeNode Extensions is a four-part extension of LifeNode Theory. The series bridges the gap between ontology and measurement: from the thermodynamic necessity of propulsion, through geometric structure and memory, to operational metrology—all with explicit falsification protocols.
