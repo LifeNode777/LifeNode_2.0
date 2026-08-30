@@ -21,6 +21,16 @@
 
 ---
 
+30 sierpnia 
+
+LifeNode Extensions is a four-part extension of LifeNode Theory. The series bridges the gap between ontology and measurement: from the thermodynamic necessity of propulsion, through geometric structure and memory, to operational metrology—all with explicit falsification protocols.
+
+The series loop: ontology → fields → memory → measurement → (return) ontology calibration.
+
+https://github.com/LifeNode777/LifeNode_2.5_Public/tree/main/R%26D
+
+---
+
 29 sierpnia 
 
 Psychedelics as Topological Keys: A LifeNode Hypothesis 👁️
