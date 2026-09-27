@@ -16,6 +16,8 @@ Następnego dnia rano 31 sierpnia ręczna interwencja Qwena (dopisanie config.py
  Cel: zaciągnięcie biologicznego sygnału ECG (MITDB 100 z PhysioNet) i udowodnienie za pomocą metryki ASCALON, że proces biologiczny jest odróżnialny od szumu (kryterium E4).
  Firewall serwerów piaskownicy zablokowała jednak zewnętrzny ruch do PhysioNet. Zamiast kapitulacji, zastosowano procedurę awaryjną zgodną z duchem Zero-Build: do silnika topologicznego wstrzyknięto syntetyczny atraktor Rösslera. To był "smoke test" ostateczny – wrzucenie do systemu czystej, eleganckiej matematyki chaosu deterministycznego, aby sprawdzić, czy ASCALON da się oszukać.
 
+ ![operacja_SZTAFETA](img/operacja_SZTAFETA.png)
+
 💀 Etap 3: Ontologiczny Werdykt (Dlaczego E4 = FALSE to triumf)
 
 Werdykt:
