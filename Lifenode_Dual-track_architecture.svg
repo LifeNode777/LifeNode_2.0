@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" style="background-color: #06090e; font-family: 'Courier New', monospace;">
+  <defs>
+    <!-- Glow Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowRed" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2ff" />
+      <stop offset="100%" stop-color="#00a896" />
+    </linearGradient>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7000ff" />
+      <stop offset="100%" stop-color="#00f2ff" />
+    </linearGradient>
+
+    <style>
+      /* Przepływ światła po liniach */
+      .flow-line {
+        stroke-dasharray: 10, 15;
+        animation: flow 1.2s linear infinite;
+      }
+      .flow-line-reverse {
+        stroke-dasharray: 10, 15;
+        animation: flow-rev 1.2s linear infinite;
+      }
+
+      @keyframes flow {
+        from { stroke-dashoffset: 25; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes flow-rev {
+        from { stroke-dashoffset: 0; }
+        to { stroke-dashoffset: 25; }
+      }
+
+      /* Pulsowanie punktu porażki */
+      .pulse-red {
+        animation: pulseRedAnim 1s ease-in-out infinite alternate;
+      }
+      @keyframes pulseRedAnim {
+        from { r: 4px; opacity: 0.6; fill: #ff0055; }
+        to { r: 7px; opacity: 1; fill: #ff3300; }
+      }
+
+      /* Mruganie kursora i wskaźnika */
+      .blink {
+        animation: blinkAnim 1s step-start infinite;
+      }
+      @keyframes blinkAnim {
+        50% { opacity: 0; }
+      }
+
+      /* Efekt scanline */
+      .scanline {
+        animation: scan 8s linear infinite;
+      }
+      @keyframes scan {
+        0% { y: -100; }
+        100% { y: 600; }
+      }
+    </style>
+  </defs>
+
+  <!-- Siatka tła -->
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#0d1821" stroke-width="1"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Animowana linia skanująca -->
+  <rect class="scanline" x="0" y="0" width="900" height="3" fill="#00f2ff" opacity="0.12" />
+
+  <!-- Nagłówek -->
+  <text x="30" y="40" fill="#00f2ff" font-size="14" font-weight="bold" letter-spacing="2" filter="url(#glow)">LIFENODE // ARCHITECTURE OF TRAJECTORY v0.?</text>
+  <text x="870" y="40" fill="#00a896" font-size="11" text-anchor="end" letter-spacing="1">PROCESS &gt; STATE <tspan class="blink" fill="#00f2ff">_</tspan></text>
+  <line x1="30" y1="50" x2="870" y2="50" stroke="#122c38" stroke-width="1" />
+
+  <!-- Bloki węzłów -->
+  <!-- Track A Node (Po lewej) -->
+  <rect x="50" y="90" width="260" height="280" fill="#081018" stroke="#00a896" stroke-width="1.5" rx="4"/>
+  <text x="70" y="115" fill="#00f2ff" font-size="12" font-weight="bold">TRACK A: CORE R&amp;D</text>
+  <text x="70" y="130" fill="#00a896" font-size="9">[Epistemic Firewall / Rigor]</text>
+  <line x1="70" y1="140" x2="290" y2="140" stroke="#122c38" />
+  
+  <text x="70" y="165" fill="#80a4b8" font-size="10">• EXPECTED_RESULTS.md</text>
+  <text x="70" y="185" fill="#80a4b8" font-size="10">• LOG.txt (PASS / FAIL)</text>
+  <text x="70" y="205" fill="#80a4b8" font-size="10">• Module G Zero-Build</text>
+  <text x="70" y="225" fill="#80a4b8" font-size="10">• ASCALON Purifier</text>
+  <text x="70" y="245" fill="#80a4b8" font-size="10">• Dead-Math Rejection</text>
+  
+  <rect x="70" y="280" width="220" height="70" fill="#03070b" stroke="#003840" stroke-width="1"/>
+  <text x="80" y="300" fill="#00f2ff" font-size="9">PROVENANCE BLOCK:</text>
+  <text x="80" y="318" fill="#4a7585" font-size="8">{"rubicon": "NOT_CROSSED",</text>
+  <text x="80" y="332" fill="#4a7585" font-size="8"> "provisional": true}</text>
+
+  <!-- Track B Node (Po prawej) -->
+  <rect x="590" y="90" width="260" height="280" fill="#0d0818" stroke="#7000ff" stroke-width="1.5" rx="4"/>
+  <text x="610" y="115" fill="#b800ff" font-size="12" font-weight="bold">TRACK B: NARRATIVE</text>
+  <text x="610" y="130" fill="#7000ff" font-size="9">[Capital Engine / Interface]</text>
+  <line x1="610" y1="140" x2="830" y2="140" stroke="#251238" />
+
+  <text x="610" y="165" fill="#a480b8" font-size="10">• TOKIO DRIFT '44</text>
+  <text x="610" y="185" fill="#a480b8" font-size="10">• Phasepunk Universe</text>
+  <text x="610" y="205" fill="#a480b8" font-size="10">• Commercial Licensing</text>
+  <text x="610" y="225" fill="#a480b8" font-size="10">• Cultural Resonance</text>
+
+  <rect x="610" y="280" width="220" height="70" fill="#06030b" stroke="#380040" stroke-width="1"/>
+  <text x="620" y="300" fill="#b800ff" font-size="9">CAPITAL FLOW:</text>
+  <text x="620" y="318" fill="#754a85" font-size="8">Funding Track A Research</text>
+  <text x="620" y="332" fill="#754a85" font-size="8">Zero Epistemic Weight</text>
+
+  <!-- Główna Trajektoria (Statyczne tło + Animowany impuls) -->
+  <path d="M 310 230 C 400 120, 500 340, 590 230" fill="none" stroke="url(#cyanGrad)" stroke-width="3" opacity="0.5" filter="url(#glow)" />
+  <path class="flow-line" d="M 310 230 C 400 120, 500 340, 590 230" fill="none" stroke="#ffffff" stroke-width="2.5" filter="url(#glow)" />
+
+  <path d="M 590 240 C 500 350, 400 130, 310 240" fill="none" stroke="url(#purpleGrad)" stroke-width="1.5" opacity="0.3" />
+  <path class="flow-line-reverse" d="M 590 240 C 500 350, 400 130, 310 240" fill="none" stroke="#b800ff" stroke-width="1.5" opacity="0.8" />
+
+  <!-- Punkty Weryfikacji (Hipoteza / Fail / Korekta) -->
+  <circle cx="360" cy="205" r="5" fill="#00f2ff" filter="url(#glow)"/>
+  <text x="350" y="190" fill="#00f2ff" font-size="8">Hypothesis</text>
+
+  <circle class="pulse-red" cx="450" cy="230" r="5" filter="url(#glowRed)"/>
+  <text x="425" y="252" fill="#ff0055" font-size="8" font-weight="bold">FAIL (LOG.txt)</text>
+
+  <circle cx="540" cy="250" r="5" fill="#00ff9d" filter="url(#glow)"/>
+  <text x="525" y="270" fill="#00ff9d" font-size="8">Correction</text>
+
+  <!-- Animowana strzałka Kapitału (Dolny przepływ B -> A) -->
+  <path d="M 600 400 L 300 400" fill="none" stroke="#7000ff" stroke-width="2" opacity="0.4" />
+  <path class="flow-line-reverse" d="M 600 400 L 300 400" fill="none" stroke="#b800ff" stroke-width="2" />
+  <polygon points="300,400 310,395 310,405" fill="#7000ff" />
+  <text x="450" y="390" fill="#7000ff" font-size="9" text-anchor="middle">Capital &amp; Attention Flow (B &#x2192; A)</text>
+
+  <!-- Animowana strzałka Inspiracji (Górny przepływ A -> B) -->
+  <path d="M 300 70 L 600 70" fill="none" stroke="#00f2ff" stroke-width="2" opacity="0.4" />
+  <path class="flow-line" d="M 300 70 L 600 70" fill="none" stroke="#00f2ff" stroke-width="2" />
+  <polygon points="600,70 590,65 590,75" fill="#00f2ff" />
+  <text x="450" y="65" fill="#00f2ff" font-size="9" text-anchor="middle">Conceptual Inspiration (A &#x2192; B)</text>
+
+  <!-- Stopka terminala -->
+  <rect x="30" y="440" width="840" height="35" fill="#03070b" stroke="#122c38" rx="2"/>
+  <circle cx="48" cy="457" r="3" fill="#00ff9d" class="blink" />
+  <text x="58" y="461" fill="#00a896" font-size="10">HUMAN ANCHOR: Active</text>
+  <text x="250" y="461" fill="#00a896" font-size="10">DIAGNOSTIC LOOP: AI Auditor</text>
+  <text x="520" y="461" fill="#00a896" font-size="10">COUPLING LOOP: Hardware / Physics</text>
+  <text x="855" y="461" fill="#00f2ff" font-size="10" text-anchor="end">CC-BY-NC-SA 4.0</text>
+</svg>
