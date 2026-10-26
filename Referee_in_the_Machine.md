@@ -1,4 +1,7 @@
 # The Referee in the Machine
+
+![module_H_Gate1_runner_1](img/module_H_Gate1_runner_1.png)
+
 ### How one Python file cleared the way for LifeNode's "analog ear" — and why that matters for the future of computing
 
 *On October 25, 2026, the LifeNode project passed one of its hardest checkpoints yet. Not with a new chip or a new material — with a piece of software designed to be mercilessly honest.*
@@ -6,21 +9,33 @@
 **A computer that listens like an ear**
 Today's machines experience the world the long way around. A sensor turns sound or light into voltage, a converter chops that voltage into numbers, and a processor grinds through those numbers — burning power and time at every step. The LifeNode project asks a simpler question: what if the wave itself did the computing?
 The answer, for now, is Module H: a metasurface — a thin, engineered film covered in microscopic structures smaller than the waves it handles. When a wave arrives, the surface's geometry does the work instantly and continuously: it recognizes particular stable wave patterns, called solitons, the way your cochlea recognizes pitch. No clock. No code. No conversion. As the project's own specification puts it: *"H is the cochlea, not the cortex. It recognizes, but does not decide."*
+
+![module_H_Gate1_runner_2](img/module_H_Gate1_runner_2.png)
+
 **Beautiful math can still be wrong**
 Hardware has a brutal rule: physics does not forgive typos. If the equations describing how waves behave on such a surface hide a single wrong sign, the fabricated device will fail silently — after months of work and a small fortune in nanofabrication. Module H currently lives between TRL 2 ("paper concept") and TRL 4 ("validated in the lab"), and the valley between those two numbers is where most bold ideas die.
 So LifeNode fenced the path with Gates: binary checkpoints the theory must clear before anyone spends money on metal. Gate 1 is the first and most fundamental: prove that the core wave equation — the nonlinear Schrödinger equation, the workhorse of optics and ocean physics alike — actually produces the promised solitons. Stably. Reproducibly. In a simulation faithful enough to trust.
+
 **Gate1_runner.py: an instrument that refuses to cheat**
 The file that closes that question, `Gate1_runner.py`, is not a simulation in the everyday sense. It is a measurement instrument — a virtual metrology lab. It sends simulated waves through the equation using a gold-standard step-by-step numerical method, then compares the outcome against something rare in nonlinear physics: an exact solution known in closed form, the Peregrine soliton, a mathematical "rogue wave."
+
 What makes the file unusual is its self-imposed discipline:
 - **It checks its own ruler first.** Before scoring anything, it verifies that the exact solution truly solves the equation on its own grid. A broken ruler scores nothing.
 - **It halves its steps.** Every run is repeated at half the time step; if the answer moves, the instrument distrusts itself.
 - **It forbids itself to cheat.** No adjusting thresholds after seeing results, no rescaling waves to make them prettier. The project's Rule 6: no post-hoc fitting.
 - **It knows the difference between a broken instrument and a failed theory.** If its own numerics drift, it declares "apparatus failure" — never a physics result.
 And it delivered. In the focusing regime — where waves gather into solitons — the simulated field matched the exact contract solution above the acceptance gate, with energy drift below one part in a hundred million. In the defocusing regime — where the surface must stay calm — a dedicated "peak suppression guard" patrolled for rogue spikes. And where the run disagreed with a number written into the project's specification, the instrument did not bend the specification; it raised a flag and handed the question back to the contract. That flag is not a scandal. It is the instrument doing exactly its job: telling the truth in both directions.
+
 **What changes for Module H**
 Gate 1 is the signature a bridge engineer puts on paper before the first steel beam is ordered. With it in place, Module H's promise — *"this geometry recognizes these waves"* — is no longer a hope. It is a reproducible measurement with full provenance: grid, step size, thresholds, software versions, timestamp, all logged and re-runnable by anyone. The project can now spend its risk where the real risk lives: materials, fabrication, losses — the messiness of the physical world — knowing the mathematics underneath will not betray it.
+
+![module_H_Gate1_runner_3](img/module_H_Gate1_runner_3.png)
+
 **Why the world should care**
 Analog wave computing is having a quiet revival. As digital chips approach their power limits, the idea of letting light and sound compute directly — in hearing aids, sonar, optical sensors, edge AI — is moving from curiosity to engineering. Every team in that race will eventually face the same Gate 1 question: *can you trust your simulation enough to bet metal on it?*
+
 LifeNode's answer is a style of science worth copying: treat your code as an instrument, not a demo. Fix your thresholds before the run. Forbid yourself from fitting afterward. Report your flags in the same voice as your passes. If the metasurfaces of the 2030s end up listening to the world the way our ears do, it will be because someone first built a referee stubborn enough to say *"not yet"* — and honest enough to say, when the time comes, *"now, yes."*
+
 ---
+
 **In plain words:** *Soliton* — a wave pulse that keeps its shape instead of spreading out. *Metasurface* — a thin engineered surface whose microscopic structure bends waves on command. *Nonlinear Schrödinger equation* — the equation describing how such waves evolve and interact. *TRL (Technology Readiness Level)* — a 1–9 scale from "idea on paper" to "proven hardware."
