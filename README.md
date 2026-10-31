@@ -1,6 +1,6 @@
 31 października 2026
 
-![Dziady 2026](roczek xD.jpg)
+![Dziady 2026](roczek%20xD.jpg)
 
 ---
 
