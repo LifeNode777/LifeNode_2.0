@@ -1,3 +1,9 @@
+31 października 2026
+
+![Dziady 2026](roczek xD.jpg)
+
+---
+
 ![Dryf_przez_Rzeczywistość](TokioDrift2044_%20Dryf_przez_Rzeczywistość.png)
 
 ---
